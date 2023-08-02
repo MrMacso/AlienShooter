@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float _jumpEndTime;
     [SerializeField] float _horizontalVelocity = 3;
     [SerializeField] float _jumpVelocity = 5;
     [SerializeField] float _jumpDuration = 0.5f;
     [SerializeField] Sprite _jumpSprite;
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _footOffset = 0.35f;
+    
     public bool IsGrounded;
+
     Rigidbody2D _rb;
     SpriteRenderer _spriteRenderer;
     AudioSource _audioSource;
-    float _horizontal;
     Animator _animator;
+    
+    float _horizontal;
     int _jumpRemaining;
+    float _jumpEndTime;
 
     void Awake()
     {
@@ -49,7 +52,6 @@ public class Player : MonoBehaviour
         UpdateGrounding();
 
         _horizontal = Input.GetAxis("Horizontal");
-        Debug.Log(_horizontal);
 
         var vertical = _rb.velocity.y;
 
