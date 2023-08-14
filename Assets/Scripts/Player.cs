@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] float _footOffset = 0.35f;
     [SerializeField] float _groundAcceleration = 10;
     [SerializeField] float _snowAcceleration = 1;
+    [SerializeField] AudioClip _coinSfx;
     
     public bool IsGrounded;
     public bool IsOnSnow;
@@ -21,11 +23,13 @@ public class Player : MonoBehaviour
     Rigidbody2D _rb;
     SpriteRenderer _spriteRenderer;
     AudioSource _audioSource;
+    PlayerInput _playerInput;
     Animator _animator;
     
     float _horizontal;
     int _jumpRemaining;
     float _jumpEndTime;
+    public int Coins { get; private set; }
 
     void Awake()
     {
@@ -33,6 +37,9 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _audioSource = GetComponent<AudioSource>();
+        _playerInput = GetComponent<PlayerInput>();
+        FindObjectOfType<PlayerCanvas>().Bind(this);
+
     }
 
     void OnDrawGizmos()
@@ -55,11 +62,11 @@ public class Player : MonoBehaviour
     {
         UpdateGrounding();
 
-        var horizontalInput = Input.GetAxis("Horizontal");
+        var horizontalInput = _playerInput.actions["Move"].ReadValue<Vector2>().x;
 
         var vertical = _rb.velocity.y;
 
-        if (Input.GetButtonDown("Fire1") && _jumpRemaining > 0)
+        if (_playerInput.actions["Jump"].WasPerformedThisFrame() && _jumpRemaining > 0)
         {
             _jumpEndTime = Time.time + _jumpDuration;
             _jumpRemaining--;
@@ -69,7 +76,7 @@ public class Player : MonoBehaviour
             _audioSource.Play();
         }
 
-        if (Input.GetButton("Fire1") && _jumpEndTime > Time.time)
+        if (_playerInput.actions["Jump"].ReadValue<float>() > 0 && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
 
         var desiredHorizontal = horizontalInput * _maxHorizonalSpeed;
@@ -127,5 +134,11 @@ public class Player : MonoBehaviour
             _spriteRenderer.flipX= false;
         else if (_horizontal < 0)
             _spriteRenderer.flipX = true;
+    }
+
+    public void AddCoin()
+    {
+        Coins++;
+        _audioSource.PlayOneShot(_coinSfx);
     }
 }
