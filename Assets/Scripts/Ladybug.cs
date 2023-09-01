@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Ladybug : MonoBehaviour, ITakeLaserDamage
+public class Ladybug : MonoBehaviour, ITakeLaserDamage, ITakeDamage
 {
     [SerializeField] float _speed = 1.0f;
     [SerializeField] float _raycastDistance = 0.2f;
@@ -89,7 +89,7 @@ public class Ladybug : MonoBehaviour, ITakeLaserDamage
         _rigidbody.velocity = Vector2.zero;
     }
 
-    internal void TakeDamgage()
+    public void TakeDamage()
     {
         gameObject.SetActive(false);
     }
