@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 7875661009557603434}
   - component: {fileID: 7875661009557603444}
   - component: {fileID: 7875661009557603445}
-  - component: {fileID: 7875661009557603446}
   - component: {fileID: 7875661009557603447}
   - component: {fileID: 1743975332}
   m_Layer: 6
@@ -461,14 +460,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &7875661009557603446
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875661009557603437}
-  m_Enabled: 1
 --- !u!114 &7875661009557603447
 MonoBehaviour:
   m_ObjectHideFlags: 0
