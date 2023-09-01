@@ -1,8 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,29 +11,39 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite _jumpSprite;
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _footOffset = 0.35f;
-    [SerializeField] float _groundAcceleration = 10;
+    [SerializeField] float _groundAcceleration = 25;
     [SerializeField] float _snowAcceleration = 1;
     [SerializeField] AudioClip _coinSfx;
+    [SerializeField] AudioClip _hurtSfx;
+    [SerializeField] float _knockbackVelocity = 300;
     
     public bool IsGrounded;
     public bool IsOnSnow;
-
 
     Rigidbody2D _rb;
     SpriteRenderer _spriteRenderer;
     AudioSource _audioSource;
     PlayerInput _playerInput;
     Animator _animator;
-    
+
     float _horizontal;
     int _jumpRemaining;
     float _jumpEndTime;
-    public int Coins { get; private set; }
+
+    PlayerData _playerData = new PlayerData();
+    
+    public event Action CoinsChanged;
+    public event Action HealthChanged;
+
+    public int Coins { get => _playerData.Coins; private set => _playerData.Coins = value; }
+    public int Health => _playerData.Health;
+
+    public Vector2 Direction { get; private set; } = Vector2.right;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _audioSource = GetComponent<AudioSource>();
         _playerInput = GetComponent<PlayerInput>();
@@ -82,10 +91,22 @@ public class Player : MonoBehaviour
         var desiredHorizontal = horizontalInput * _maxHorizonalSpeed;
         var acceleration = IsOnSnow ? _snowAcceleration : _groundAcceleration;
 
-        _horizontal = Mathf.Lerp(_horizontal, desiredHorizontal, Time.deltaTime * acceleration);
+        if (desiredHorizontal > _horizontal)
+        {
+            _horizontal += acceleration * Time.deltaTime;
+            if (_horizontal > desiredHorizontal)
+                _horizontal = desiredHorizontal;
+        }
+        else if (desiredHorizontal < _horizontal)
+        {
+            _horizontal -= acceleration * Time.deltaTime;
+            if (_horizontal < desiredHorizontal)
+                _horizontal = desiredHorizontal;
+        }
         _rb.velocity = new Vector2(_horizontal, vertical);
 
-        UpdateSprite();
+        UpdateAnimation();
+        UpdateDirection();
     }
 
     void UpdateGrounding()
@@ -124,21 +145,53 @@ public class Player : MonoBehaviour
             _jumpRemaining = 2;
 
     }
-
-    void UpdateSprite()
+    void UpdateAnimation()
     {
-        _animator.SetBool("IsGrounded", IsGrounded);
-        _animator.SetFloat("HorizontalSpeed",Math.Abs( _horizontal));
-
-        if(_horizontal > 0) 
-            _spriteRenderer.flipX= false;
-        else if (_horizontal < 0)
-            _spriteRenderer.flipX = true;
+        _animator.SetBool("Jump", !IsGrounded);
+        _animator.SetBool("Move", _horizontal != 0f);
     }
-
-    public void AddCoin()
+    private void UpdateDirection()
+    {
+        if (_horizontal > 0)
+        {
+            _animator.transform.rotation = Quaternion.identity;
+            Direction = Vector2.right;
+        }
+        else if (_horizontal < 0)
+        {
+            _animator.transform.rotation = Quaternion.Euler(0, 180, 0);
+            Direction = Vector2.left;
+        }
+    }
+    public void AddPoint()
     {
         Coins++;
         _audioSource.PlayOneShot(_coinSfx);
+        CoinsChanged?.Invoke();
+    }
+    public void Bind(PlayerData playerData)
+    {
+        _playerData= playerData;
+    }
+    public void TakeDamage(Vector2 hitNormal)
+    {
+        _playerData.Health--;
+        if (_playerData.Health <= 0)
+        { 
+            SceneManager.LoadScene(0);
+            return;
+        }
+        _rb.AddForce(-hitNormal * _knockbackVelocity);
+        _audioSource.PlayOneShot(_hurtSfx);
+        HealthChanged?.Invoke();
+    }
+    public void StopJump()
+    {
+        _jumpEndTime = Time.time;
+    }
+
+    public void Bounce(Vector2 normal, float bounciness)
+    {
+        _rb.AddForce(-normal * bounciness);
     }
 }
