@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Ladybug : MonoBehaviour, ITakeLaserDamage
@@ -88,4 +89,8 @@ public class Ladybug : MonoBehaviour, ITakeLaserDamage
         _rigidbody.velocity = Vector2.zero;
     }
 
+    internal void TakeDamgage()
+    {
+        gameObject.SetActive(false);
+    }
 }

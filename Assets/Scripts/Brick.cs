@@ -7,7 +7,8 @@ public class Brick : MonoBehaviour, ITakeLaserDamage
 {
     [SerializeField] ParticleSystem _brickParticles;
     [SerializeField] float _laserDestructionTime = 1f;
-    float _laserDamageTime;
+    [SerializeField] int _shotsToDestroy = 3;
+    float _takenDamageTime;
     SpriteRenderer _spriteRenderer;
     float _resetColorTime;
 
@@ -20,8 +21,8 @@ public class Brick : MonoBehaviour, ITakeLaserDamage
         _spriteRenderer.color= Color.red;
         _resetColorTime= Time.time + 0.1f;
 
-        _laserDamageTime += Time.deltaTime;
-        if(_laserDamageTime >= _laserDestructionTime)
+        _takenDamageTime += Time.deltaTime;
+        if(_takenDamageTime >= _laserDestructionTime)
             Explode();
     }
     void Update()
@@ -51,5 +52,12 @@ public class Brick : MonoBehaviour, ITakeLaserDamage
     {
         Instantiate(_brickParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    internal void TakeDamage()
+    {
+        _takenDamageTime += _laserDestructionTime / _shotsToDestroy;
+        if (_takenDamageTime >= _laserDestructionTime)
+            Explode();
     }
 }
