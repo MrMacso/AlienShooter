@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 371}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 74
+  controlID: 75
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,15 +64,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1485
+    x: 1427
     y: 0
-    width: 435
+    width: 493
     height: 939
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &4
@@ -92,13 +92,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 357
-    height: 651
+    width: 351
+    height: 622
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -117,17 +117,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 651
-    width: 1485
-    height: 288
+    y: 622
+    width: 1427
+    height: 317
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 16}
-  - {fileID: 21}
-  - {fileID: 12}
-  - {fileID: 14}
+  - {fileID: 15}
+  - {fileID: 20}
   - {fileID: 13}
   m_Selected: 0
   m_LastSelected: 1
@@ -221,12 +219,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1485
+    width: 1427
     height: 939
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 75
+  controlID: 63
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,12 +244,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1485
-    height: 651
+    width: 1427
+    height: 622
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 76
+  controlID: 64
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,1035 +265,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 357
+    x: 351
     y: 0
-    width: 1128
-    height: 651
+    width: 1076
+    height: 622
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 18}
   m_Panes:
+  - {fileID: 18}
   - {fileID: 19}
-  - {fileID: 20}
-  - {fileID: 15}
+  - {fileID: 14}
+  - {fileID: 12}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12070, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 880, y: 216}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Profiler
-    m_Image: {fileID: -1089619856830078684, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 724
-    width: 1558
-    height: 267
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_Recording: 1
-  m_ActiveNativePlatformSupportModuleName: 
-  m_AllModules:
-  - rid: 5825012913056251904
-  - rid: 5825012913056251905
-  - rid: 5825012913056251906
-  - rid: 5825012913056251907
-  - rid: 5825012913056251908
-  - rid: 5825012913056251909
-  - rid: 5825012913056251910
-  - rid: 5825012913056251911
-  - rid: 5825012913056251912
-  - rid: 5825012913056251913
-  - rid: 5825012913056251914
-  - rid: 5825012913056251915
-  - rid: 5825012913056251916
-  - rid: 5825012913056251917
-  - rid: 5825012913056251918
-  - rid: 5825012913056251919
-  m_CallstackRecordMode: 1
-  m_ClearOnPlay: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 5825012913056251904
-      type: {class: CPUProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.CPUProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-        m_ViewType: 0
-        updateViewLive: 0
-        m_CurrentFrameIndex: -1
-        m_HierarchyOverruledThreadFromSelection: 0
-        m_ProfilerViewFilteringOptions: 1
-        m_FrameDataHierarchyView:
-          m_Serialized: 1
-          m_TreeViewState:
-            scrollPos: {x: 0, y: 64}
-            m_SelectedIDs: 38000000
-            m_LastClickedID: 0
-            m_ExpandedIDs: 040000003800000075000000c0000000
-            m_RenameOverlay:
-              m_UserAcceptedRename: 0
-              m_Name: 
-              m_OriginalName: 
-              m_EditFieldRect:
-                serializedVersion: 2
-                x: 0
-                y: 0
-                width: 0
-                height: 0
-              m_UserData: 0
-              m_IsWaitingForDelay: 0
-              m_IsRenaming: 0
-              m_OriginalEventType: 11
-              m_IsRenamingFilename: 0
-              m_ClientGUIView: {fileID: 0}
-            m_SearchString: 
-          m_MultiColumnHeaderState:
-            m_Columns:
-            - width: 369
-              sortedAscending: 1
-              headerContent:
-                m_Text: Overview
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 200
-              maxWidth: 1000000
-              autoResize: 1
-              allowToggleVisibility: 0
-              canSort: 1
-              userData: 0
-            - width: 80
-              sortedAscending: 0
-              headerContent:
-                m_Text: Total
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 50
-              maxWidth: 1000000
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            - width: 80
-              sortedAscending: 0
-              headerContent:
-                m_Text: Self
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 50
-              maxWidth: 1000000
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            - width: 80
-              sortedAscending: 0
-              headerContent:
-                m_Text: Calls
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 50
-              maxWidth: 1000000
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            - width: 80
-              sortedAscending: 0
-              headerContent:
-                m_Text: GC Alloc
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 50
-              maxWidth: 1000000
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            - width: 80
-              sortedAscending: 0
-              headerContent:
-                m_Text: Time ms
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 50
-              maxWidth: 1000000
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            - width: 80
-              sortedAscending: 0
-              headerContent:
-                m_Text: Self ms
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 50
-              maxWidth: 1000000
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            - width: 25
-              sortedAscending: 0
-              headerContent:
-                m_Text: 
-                m_Image: {fileID: -5161429177145976760, guid: 0000000000000000d000000000000000, type: 0}
-                m_Tooltip: Warnings
-              contextMenuText: 
-              headerTextAlignment: 0
-              sortingArrowAlignment: 2
-              minWidth: 25
-              maxWidth: 25
-              autoResize: 0
-              allowToggleVisibility: 1
-              canSort: 1
-              userData: 0
-            m_VisibleColumns: 0000000001000000020000000300000004000000050000000600000007000000
-            m_SortedColumns: 05000000
-          m_ThreadIndexInThreadNames: 0
-          m_DetailedViewType: 0
-          m_DetailedViewSpliterState:
-            ID: 0
-            splitterInitialOffset: 0
-            currentActiveSplitter: -1
-            realSizes:
-            - 0
-            - 0
-            relativeSizes:
-            - 0.7
-            - 0.3
-            minSizes:
-            - 450
-            - 50
-            maxSizes:
-            - 0
-            - 0
-            lastTotalSize: 0
-            splitSize: 6
-            xOffset: 0
-            m_Version: 1
-            oldRealSizes: 
-            oldMinSizes: 
-            oldMaxSizes: 
-            oldSplitSize: 0
-          m_DetailedObjectsView:
-            m_SelectedID: 0
-            m_TreeViewState:
-              scrollPos: {x: 0, y: 0}
-              m_SelectedIDs: 
-              m_LastClickedID: 0
-              m_ExpandedIDs: 
-              m_RenameOverlay:
-                m_UserAcceptedRename: 0
-                m_Name: 
-                m_OriginalName: 
-                m_EditFieldRect:
-                  serializedVersion: 2
-                  x: 0
-                  y: 0
-                  width: 0
-                  height: 0
-                m_UserData: 0
-                m_IsWaitingForDelay: 0
-                m_IsRenaming: 0
-                m_OriginalEventType: 11
-                m_IsRenamingFilename: 0
-                m_ClientGUIView: {fileID: 0}
-              m_SearchString: 
-            m_MultiColumnHeaderState:
-              m_Columns: []
-              m_VisibleColumns: 
-              m_SortedColumns: 
-            m_VertSplit:
-              ID: 0
-              splitterInitialOffset: 0
-              currentActiveSplitter: 0
-              realSizes: []
-              relativeSizes: []
-              minSizes: []
-              maxSizes: []
-              lastTotalSize: 0
-              splitSize: 0
-              xOffset: 0
-              m_Version: 1
-              oldRealSizes: 
-              oldMinSizes: 
-              oldMaxSizes: 
-              oldSplitSize: 0
-          m_DetailedCallsView:
-            m_SelectedID: -1
-            m_VertSplit:
-              ID: 0
-              splitterInitialOffset: 0
-              currentActiveSplitter: 0
-              realSizes: []
-              relativeSizes: []
-              minSizes: []
-              maxSizes: []
-              lastTotalSize: 0
-              splitSize: 0
-              xOffset: 0
-              m_Version: 1
-              oldRealSizes: 
-              oldMinSizes: 
-              oldMaxSizes: 
-              oldSplitSize: 0
-            m_CalleesTreeView:
-              m_ViewState:
-                scrollPos: {x: 0, y: 0}
-                m_SelectedIDs: 
-                m_LastClickedID: 0
-                m_ExpandedIDs: 
-                m_RenameOverlay:
-                  m_UserAcceptedRename: 0
-                  m_Name: 
-                  m_OriginalName: 
-                  m_EditFieldRect:
-                    serializedVersion: 2
-                    x: 0
-                    y: 0
-                    width: 0
-                    height: 0
-                  m_UserData: 0
-                  m_IsWaitingForDelay: 0
-                  m_IsRenaming: 0
-                  m_OriginalEventType: 11
-                  m_IsRenamingFilename: 0
-                  m_ClientGUIView: {fileID: 0}
-                m_SearchString: 
-              m_ViewHeaderState:
-                m_Columns:
-                - width: 150
-                  sortedAscending: 1
-                  headerContent:
-                    m_Text: Called From
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 'Parents the selected function is called from
-
-
-                      (Press
-                      ''F'' for frame selection)'
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 150
-                  maxWidth: 1000000
-                  autoResize: 1
-                  allowToggleVisibility: 0
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Calls
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total number of calls in a selected frame
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: GC Alloc
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time ms
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total time the selected function spends within a parent
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time %
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Shows how often the selected function was called from
-                      the parent call
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                m_VisibleColumns: 0000000001000000020000000300000004000000
-                m_SortedColumns: 03000000
-            m_CallersTreeView:
-              m_ViewState:
-                scrollPos: {x: 0, y: 0}
-                m_SelectedIDs: 
-                m_LastClickedID: 0
-                m_ExpandedIDs: 
-                m_RenameOverlay:
-                  m_UserAcceptedRename: 0
-                  m_Name: 
-                  m_OriginalName: 
-                  m_EditFieldRect:
-                    serializedVersion: 2
-                    x: 0
-                    y: 0
-                    width: 0
-                    height: 0
-                  m_UserData: 0
-                  m_IsWaitingForDelay: 0
-                  m_IsRenaming: 0
-                  m_OriginalEventType: 11
-                  m_IsRenamingFilename: 0
-                  m_ClientGUIView: {fileID: 0}
-                m_SearchString: 
-              m_ViewHeaderState:
-                m_Columns:
-                - width: 150
-                  sortedAscending: 1
-                  headerContent:
-                    m_Text: Called From
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 'Parents the selected function is called from
-
-
-                      (Press
-                      ''F'' for frame selection)'
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 150
-                  maxWidth: 1000000
-                  autoResize: 1
-                  allowToggleVisibility: 0
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Calls
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total number of calls in a selected frame
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: GC Alloc
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time ms
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total time the selected function spends within a parent
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time %
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Shows how often the selected function was called from
-                      the parent call
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                m_VisibleColumns: 0000000001000000020000000300000004000000
-                m_SortedColumns: 03000000
-          m_FullThreadName: Main Thread
-          m_ThreadName: Main Thread
-          <threadId>k__BackingField: 17436
-          <threadIndex>k__BackingField: 0
-          m_GroupName: 
-    - rid: 5825012913056251905
-      type: {class: GPUProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.GPUProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-        m_ViewType: 0
-        updateViewLive: 0
-        m_CurrentFrameIndex: -1
-        m_HierarchyOverruledThreadFromSelection: 0
-        m_ProfilerViewFilteringOptions: 1
-        m_FrameDataHierarchyView:
-          m_Serialized: 0
-          m_TreeViewState:
-            scrollPos: {x: 0, y: 0}
-            m_SelectedIDs: 
-            m_LastClickedID: 0
-            m_ExpandedIDs: 
-            m_RenameOverlay:
-              m_UserAcceptedRename: 0
-              m_Name: 
-              m_OriginalName: 
-              m_EditFieldRect:
-                serializedVersion: 2
-                x: 0
-                y: 0
-                width: 0
-                height: 0
-              m_UserData: 0
-              m_IsWaitingForDelay: 0
-              m_IsRenaming: 0
-              m_OriginalEventType: 11
-              m_IsRenamingFilename: 0
-              m_ClientGUIView: {fileID: 0}
-            m_SearchString: 
-          m_MultiColumnHeaderState:
-            m_Columns: []
-            m_VisibleColumns: 
-            m_SortedColumns: 
-          m_ThreadIndexInThreadNames: 0
-          m_DetailedViewType: 0
-          m_DetailedViewSpliterState:
-            ID: 0
-            splitterInitialOffset: 0
-            currentActiveSplitter: 0
-            realSizes: []
-            relativeSizes: []
-            minSizes: []
-            maxSizes: []
-            lastTotalSize: 0
-            splitSize: 0
-            xOffset: 0
-            m_Version: 1
-            oldRealSizes: 
-            oldMinSizes: 
-            oldMaxSizes: 
-            oldSplitSize: 0
-          m_DetailedObjectsView:
-            m_SelectedID: 0
-            m_TreeViewState:
-              scrollPos: {x: 0, y: 0}
-              m_SelectedIDs: 
-              m_LastClickedID: 0
-              m_ExpandedIDs: 
-              m_RenameOverlay:
-                m_UserAcceptedRename: 0
-                m_Name: 
-                m_OriginalName: 
-                m_EditFieldRect:
-                  serializedVersion: 2
-                  x: 0
-                  y: 0
-                  width: 0
-                  height: 0
-                m_UserData: 0
-                m_IsWaitingForDelay: 0
-                m_IsRenaming: 0
-                m_OriginalEventType: 11
-                m_IsRenamingFilename: 0
-                m_ClientGUIView: {fileID: 0}
-              m_SearchString: 
-            m_MultiColumnHeaderState:
-              m_Columns: []
-              m_VisibleColumns: 
-              m_SortedColumns: 
-            m_VertSplit:
-              ID: 0
-              splitterInitialOffset: 0
-              currentActiveSplitter: 0
-              realSizes: []
-              relativeSizes: []
-              minSizes: []
-              maxSizes: []
-              lastTotalSize: 0
-              splitSize: 0
-              xOffset: 0
-              m_Version: 1
-              oldRealSizes: 
-              oldMinSizes: 
-              oldMaxSizes: 
-              oldSplitSize: 0
-          m_DetailedCallsView:
-            m_SelectedID: -1
-            m_VertSplit:
-              ID: 0
-              splitterInitialOffset: 0
-              currentActiveSplitter: 0
-              realSizes: []
-              relativeSizes: []
-              minSizes: []
-              maxSizes: []
-              lastTotalSize: 0
-              splitSize: 0
-              xOffset: 0
-              m_Version: 1
-              oldRealSizes: 
-              oldMinSizes: 
-              oldMaxSizes: 
-              oldSplitSize: 0
-            m_CalleesTreeView:
-              m_ViewState:
-                scrollPos: {x: 0, y: 0}
-                m_SelectedIDs: 
-                m_LastClickedID: 0
-                m_ExpandedIDs: 
-                m_RenameOverlay:
-                  m_UserAcceptedRename: 0
-                  m_Name: 
-                  m_OriginalName: 
-                  m_EditFieldRect:
-                    serializedVersion: 2
-                    x: 0
-                    y: 0
-                    width: 0
-                    height: 0
-                  m_UserData: 0
-                  m_IsWaitingForDelay: 0
-                  m_IsRenaming: 0
-                  m_OriginalEventType: 11
-                  m_IsRenamingFilename: 0
-                  m_ClientGUIView: {fileID: 0}
-                m_SearchString: 
-              m_ViewHeaderState:
-                m_Columns:
-                - width: 150
-                  sortedAscending: 1
-                  headerContent:
-                    m_Text: Called From
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 'Parents the selected function is called from
-
-
-                      (Press
-                      ''F'' for frame selection)'
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 150
-                  maxWidth: 1000000
-                  autoResize: 1
-                  allowToggleVisibility: 0
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Calls
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total number of calls in a selected frame
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: GC Alloc
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time ms
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total time the selected function spends within a parent
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time %
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Shows how often the selected function was called from
-                      the parent call
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                m_VisibleColumns: 0000000001000000020000000300000004000000
-                m_SortedColumns: 03000000
-            m_CallersTreeView:
-              m_ViewState:
-                scrollPos: {x: 0, y: 0}
-                m_SelectedIDs: 
-                m_LastClickedID: 0
-                m_ExpandedIDs: 
-                m_RenameOverlay:
-                  m_UserAcceptedRename: 0
-                  m_Name: 
-                  m_OriginalName: 
-                  m_EditFieldRect:
-                    serializedVersion: 2
-                    x: 0
-                    y: 0
-                    width: 0
-                    height: 0
-                  m_UserData: 0
-                  m_IsWaitingForDelay: 0
-                  m_IsRenaming: 0
-                  m_OriginalEventType: 11
-                  m_IsRenamingFilename: 0
-                  m_ClientGUIView: {fileID: 0}
-                m_SearchString: 
-              m_ViewHeaderState:
-                m_Columns:
-                - width: 150
-                  sortedAscending: 1
-                  headerContent:
-                    m_Text: Called From
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 'Parents the selected function is called from
-
-
-                      (Press
-                      ''F'' for frame selection)'
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 150
-                  maxWidth: 1000000
-                  autoResize: 1
-                  allowToggleVisibility: 0
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Calls
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total number of calls in a selected frame
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: GC Alloc
-                    m_Image: {fileID: 0}
-                    m_Tooltip: 
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time ms
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Total time the selected function spends within a parent
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                - width: 60
-                  sortedAscending: 0
-                  headerContent:
-                    m_Text: Time %
-                    m_Image: {fileID: 0}
-                    m_Tooltip: Shows how often the selected function was called from
-                      the parent call
-                  contextMenuText: 
-                  headerTextAlignment: 0
-                  sortingArrowAlignment: 2
-                  minWidth: 60
-                  maxWidth: 1000000
-                  autoResize: 0
-                  allowToggleVisibility: 1
-                  canSort: 1
-                  userData: 0
-                m_VisibleColumns: 0000000001000000020000000300000004000000
-                m_SortedColumns: 03000000
-          m_FullThreadName: Main Thread
-          m_ThreadName: Main Thread
-          <threadId>k__BackingField: 0
-          <threadIndex>k__BackingField: -1
-          m_GroupName: 
-    - rid: 5825012913056251906
-      type: {class: RenderingProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.RenderingProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251907
-      type: {class: MemoryProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.MemoryProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-        m_ViewSplit:
-          ID: 0
-          splitterInitialOffset: 0
-          currentActiveSplitter: -1
-          realSizes:
-          - 0
-          - 0
-          relativeSizes:
-          - 0.7
-          - 0.3
-          minSizes:
-          - 450
-          - 50
-          maxSizes:
-          - 0
-          - 0
-          lastTotalSize: 0
-          splitSize: 6
-          xOffset: 0
-          m_Version: 1
-          oldRealSizes: 
-          oldMinSizes: 
-          oldMaxSizes: 
-          oldSplitSize: 0
-    - rid: 5825012913056251908
-      type: {class: AudioProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.AudioProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-        m_ShowInactiveDSPChains: 0
-        m_HighlightAudibleDSPChains: 1
-        m_DSPGraphZoomFactor: 1
-    - rid: 5825012913056251909
-      type: {class: VideoProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.VideoProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251910
-      type: {class: PhysicsProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.PhysicsProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251911
-      type: {class: Physics2DProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.Physics2DProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251912
-      type: {class: NetworkingMessagesProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.NetworkingMessagesProfilerModule,
-          UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251913
-      type: {class: NetworkingOperationsProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.NetworkingOperationsProfilerModule,
-          UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-        m_NetworkSplit:
-          ID: 0
-          splitterInitialOffset: 0
-          currentActiveSplitter: -1
-          realSizes:
-          - 0
-          - 0
-          relativeSizes:
-          - 0.2
-          - 0.8
-          minSizes:
-          - 100
-          - 100
-          maxSizes:
-          - 0
-          - 0
-          lastTotalSize: 0
-          splitSize: 6
-          xOffset: 0
-          m_Version: 1
-          oldRealSizes: 
-          oldMinSizes: 
-          oldMaxSizes: 
-          oldSplitSize: 0
-        msgNames:
-        - UserMessage
-        - ObjectDestroy
-        - ClientRpc
-        - ObjectSpawn
-        - Owner
-        - Command
-        - LocalPlayerTransform
-        - SyncEvent
-        - SyncVars
-        - SyncList
-        - ObjectSpawnScene
-        - NetworkInfo
-        - SpawnFinished
-        - ObjectHide
-        - CRC
-        - ClientAuthority
-    - rid: 5825012913056251914
-      type: {class: UIProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.UIProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251915
-      type: {class: UIDetailsProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.UIDetailsProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251916
-      type: {class: GlobalIlluminationProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.GlobalIlluminationProfilerModule,
-          UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251917
-      type: {class: VirtualTexturingProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.VirtualTexturingProfilerModule,
-          UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-        m_VTProfilerView:
-          rid: 5825012913056251920
-    - rid: 5825012913056251918
-      type: {class: FileIOProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.FileIOProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251919
-      type: {class: AssetLoadingProfilerModule, ns: UnityEditorInternal.Profiling, asm: UnityEditor.CoreModule}
-      data:
-        m_Identifier: UnityEditorInternal.Profiling.AssetLoadingProfilerModule, UnityEditor.CoreModule,
-          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        m_PaneScroll: {x: 0, y: 0}
-    - rid: 5825012913056251920
-      type: {class: VirtualTexturingProfilerView, ns: UnityEditor, asm: UnityEditor.CoreModule}
-      data:
-        m_SortAscending: 0
-        m_SortedColumn: -1
---- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1315,10 +299,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 724
-    width: 1484
-    height: 267
+    x: 384
+    y: 81
+    width: 1140
+    height: 590
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1327,20 +311,15 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 4489229853375781007, guid: 355b03b526b28e747b061bac13767b20, type: 2}
     - {fileID: -2079661236823515050, guid: 355b03b526b28e747b061bac13767b20, type: 2}
-    - {fileID: -3027054000626856796, guid: 63eccddc6f97cc04e87cfcf79ac991c7, type: 2}
-    - {fileID: -1332677936938880541, guid: 9d69f484f14d0024f8a6a1248809baf4, type: 2}
-    - {fileID: -3461079095341834858, guid: 14d2faafc63dc4c42968c1622eaa3a7a, type: 2}
-    - {fileID: -8580909422934290922, guid: 14d2faafc63dc4c42968c1622eaa3a7a, type: 2}
-    - {fileID: 3219663832952175925, guid: 9d69f484f14d0024f8a6a1248809baf4, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.792
+    - e00: 1.3225
       e01: 0
       e02: 0
-      e03: 212.70001
+      e03: 44.12024
       e10: 0
-      e11: 0.792
+      e11: 1.3225
       e12: 0
-      e13: -0.83999634
+      e13: 154.25003
       e20: 0
       e21: 0
       e22: 1
@@ -1365,92 +344,10 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.7235294
-      e01: 0
-      e02: 0
-      e03: 24.147064
-      e10: 0
-      e11: 0.7235294
-      e12: 0
-      e13: 15
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.825
-      e01: 0
-      e02: 0
-      e03: 195.375
-      e10: 0
-      e11: 0.825
-      e12: 0
-      e13: 0.000015258789
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.8824752
-      e01: 0
-      e02: 0
-      e03: -23.817657
-      e10: 0
-      e11: 0.8824752
-      e12: 0
-      e13: -75.12753
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 1
-      e01: 0
-      e02: 0
-      e03: 6.0012817
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: -126
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 1
-      e01: 0
-      e02: 0
-      e03: 318.5
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 29
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 9d69f484f14d0024f8a6a1248809baf4, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 355b03b526b28e747b061bac13767b20, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -1332677936938880541, guid: 9d69f484f14d0024f8a6a1248809baf4, type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
-  - m_Target: {fileID: 3219663832952175925, guid: 9d69f484f14d0024f8a6a1248809baf4, type: 2}
+  - m_Target: {fileID: 4489229853375781007, guid: 355b03b526b28e747b061bac13767b20, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1463,7 +360,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &14
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1484,17 +381,17 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 724
-    width: 1484
-    height: 267
+    y: 695
+    width: 1530
+    height: 296
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -25168
---- !u!114 &15
+  m_LastSelectedObjectID: -15794
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1522,7 +419,7 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &16
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1543,9 +440,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 724
-    width: 1484
-    height: 267
+    y: 695
+    width: 1426
+    height: 296
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1567,18 +464,18 @@ MonoBehaviour:
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 55
+  m_StartGridSize: 16
   m_LastFolders:
   - Assets/Prefabs
-  m_LastFoldersGridSize: 55
+  m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Assests and Unity\Repos\AlienShooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 86790000
-    m_LastClickedID: 31110
-    m_ExpandedIDs: 0000000070790000727900007479000076790000787900007a790000
+    m_SelectedIDs: b86e0000
+    m_LastClickedID: 28344
+    m_ExpandedIDs: 00000000a66e0000a86e0000aa6e0000ac6e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1594,7 +491,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1606,7 +503,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000070790000727900007479000076790000787900007a790000
+    m_ExpandedIDs: 00000000a66e0000a86e0000aa6e0000ac6e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1634,7 +531,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000044760000826b000000000000c6750000
+    m_ExpandedInstanceIDs: c623000044760000826b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1658,11 +555,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 55
+    m_ScrollPosition: {x: 0, y: 7}
+    m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &17
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1682,9 +579,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1485
+    x: 1427
     y: 73
-    width: 434
+    width: 492
     height: 918
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1703,7 +600,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &18
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1725,8 +622,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 356
-    height: 630
+    width: 350
+    height: 601
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1736,7 +633,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 38e8ffff3ce8ffffa2f7ffffa8f7ffffaef7ffffe8f7ffffeef7fffff4f7fffff8f7ffff22f8ffff06fbffff
+      m_ExpandedIDs: 4ec2ffff8ec2fffffcd3ffff92d5ffff90d7ffffdadbffff0afbfffff4a00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1760,7 +657,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 85c7b48f2dcf1b44ea7933edcf69c991
---- !u!114 &19
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1780,10 +677,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 357
+    x: 351
     y: 73
-    width: 1126
-    height: 630
+    width: 1074
+    height: 601
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1859,7 +756,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -1991,7 +888,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -2007,9 +904,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.0302696, y: -1.5982072, z: -0.0017147108}
+    m_Target: {x: -0.85812604, y: -3.8655233, z: 2.291202}
     speed: 2
-    m_Value: {x: -1.0302696, y: -1.5982072, z: -0.0017147108}
+    m_Value: {x: -0.85812604, y: -3.8655233, z: 2.291202}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2060,9 +957,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.7708614
+    m_Target: 6.185164
     speed: 2
-    m_Value: 1.7708614
+    m_Value: 6.185164
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2080,14 +977,14 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.06692464, y: 0.9238569, z: -0.18997908, w: -0.325451}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &20
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2107,10 +1004,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 357
+    x: 351
     y: 73
-    width: 1126
-    height: 630
+    width: 1074
+    height: 601
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -2157,29 +1054,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1126
-      height: 609
-    m_Scale: {x: 0.5638889, y: 0.5638889}
-    m_Translation: {x: 563, y: 304.5}
+      width: 1074
+      height: 580
+    m_Scale: {x: 0.537037, y: 0.537037}
+    m_Translation: {x: 537, y: 290}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -998.4236
+      x: -999.9311
       y: -540
-      width: 1996.8472
+      width: 1999.8622
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.5638889
-  m_LastWindowPixelSize: {x: 1126, y: 630}
+  m_defaultScale: 0.537037
+  m_LastWindowPixelSize: {x: 1074, y: 601}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &21
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2200,9 +1097,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 724
-    width: 1484
-    height: 267
+    y: 695
+    width: 1426
+    height: 296
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
