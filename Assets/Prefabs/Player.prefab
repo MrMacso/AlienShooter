@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7875661009557603439}
+  m_Father: {fileID: 7325352799829328211}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &519420031
@@ -175,6 +175,39 @@ Transform:
   m_Father: {fileID: 7501416404247874406}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3097270965206328416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7325352799829328211}
+  m_Layer: 6
+  m_Name: Split Screen Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7325352799829328211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097270965206328416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7875661009622247953}
+  - {fileID: 519420032}
+  m_Father: {fileID: 7875661009557603439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7875661009557603437
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,8 +244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7875661009622247953}
-  - {fileID: 519420032}
+  - {fileID: 7325352799829328211}
   - {fileID: 6213388156213858520}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -511,7 +543,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7875661010557966770}
-  m_Father: {fileID: 7875661009557603439}
+  m_Father: {fileID: 7325352799829328211}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7875661009622247954
@@ -649,7 +681,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4283367920542834431, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4283367920542834431, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
       propertyPath: m_LocalPosition.x
