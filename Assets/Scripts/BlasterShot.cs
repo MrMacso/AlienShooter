@@ -7,7 +7,6 @@ using UnityEngine.Pool;
 public class BlasterShot : MonoBehaviour
 {
     [SerializeField] float _speed = 8.0f;
-    [SerializeField] GameObject _impactExplosion;
     [SerializeField] float _maxLifetime = 4f;
 
     Rigidbody2D _rb;
@@ -47,8 +46,7 @@ public class BlasterShot : MonoBehaviour
         if (damageable != null)
             damageable.TakeDamage();
 
-        var explosion = Instantiate(_impactExplosion, collision.contacts[0].point, Quaternion.identity);
-        Destroy(explosion.gameObject, 0.9f);
+        PoolManager.Instance.GetBlasterExplosion(collision.contacts[0].point);
 
         SelfDestruct();
     }
