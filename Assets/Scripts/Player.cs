@@ -17,7 +17,9 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip _coinSfx;
     [SerializeField] AudioClip _hurtSfx;
     [SerializeField] float _knockbackVelocity = 300;
-    
+    [SerializeField] Collider2D _duckCollider;
+    [SerializeField] Collider2D _standingCollider;
+
     public bool IsGrounded;
     public bool IsOnSnow;
 
@@ -32,7 +34,7 @@ public class Player : MonoBehaviour
     float _jumpEndTime;
 
     PlayerData _playerData = new PlayerData();
-    
+
     public event Action CoinsChanged;
     public event Action HealthChanged;
 
@@ -96,8 +98,12 @@ public class Player : MonoBehaviour
         var acceleration = IsOnSnow ? _snowAcceleration : _groundAcceleration;
 
         _animator.SetBool("Duck", verticalInput < 0);
-        if(_animator.GetBool("IsDucking"))
+
+        var isDucking = _animator.GetBool("IsDucking");
+        if (isDucking)
             desiredHorizontal = 0;
+        _duckCollider.enabled = isDucking;
+        _standingCollider.enabled = !isDucking;
 
         if (desiredHorizontal > _horizontal)
         {

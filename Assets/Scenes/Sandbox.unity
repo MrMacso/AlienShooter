@@ -842,6 +842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13f65375fe513a6429c73e03e1ab091b, type: 3}
+--- !u!1 &460189685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7875661009557603437, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
+  m_PrefabInstance: {fileID: 7875661010827150436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &529228033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1336,6 +1341,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7875661009557603439, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
   m_PrefabInstance: {fileID: 7875661010827150436}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1550179543 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7875661009557603444, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
+  m_PrefabInstance: {fileID: 7875661010827150436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1550179547
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460189685}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4}
+  m_Size: {x: 0.84, y: 1.2}
+  m_Direction: 0
 --- !u!4 &1600588736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4627573751007222193, guid: 4cfc4156f9e5ce842a67ebd4ad741bbf, type: 3}
@@ -2783,6 +2809,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7875661009557603434, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
+      propertyPath: _duckCollider
+      value: 
+      objectReference: {fileID: 1550179547}
+    - target: {fileID: 7875661009557603434, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
+      propertyPath: _standingCollider
+      value: 
+      objectReference: {fileID: 1550179543}
     - target: {fileID: 7875661009557603437, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
       propertyPath: m_Name
       value: Player
