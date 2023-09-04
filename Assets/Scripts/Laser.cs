@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -8,13 +7,26 @@ public class Laser : MonoBehaviour
     [SerializeField] Vector2 _direction= Vector2.left;
     [SerializeField] float _distance = 10f;
     [SerializeField] SpriteRenderer _laserBurst;
-    LineRenderer _lineRenderer;
+    [SerializeField] LineRenderer _lineRenderer;
+
     bool _isOn;
 
     void Awake()
-    {
-        _lineRenderer= GetComponent<LineRenderer>();
+    {  
         Toggle(false);
+    }
+    void OnValidate()
+    {
+        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer.SetPosition(0, transform.position);
+        var endPoint = (Vector2)transform.position + (_direction * _distance);
+
+        var firstThing = Physics2D.Raycast(transform.position, _direction, _distance);
+        if (firstThing.collider)
+            endPoint = firstThing.point;
+
+        _lineRenderer.SetPosition(1, endPoint);
+        _laserBurst.transform.position = endPoint;
     }
     public void Toggle(bool state)
     {
