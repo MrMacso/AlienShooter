@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1642759186637705861}
   - component: {fileID: 1642759186637705858}
   - component: {fileID: 773133524}
+  - component: {fileID: 2342071213823474233}
   m_Layer: 0
   m_Name: PlayerInputManager & GameManager
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
-  m_JoinBehavior: 1
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -75,7 +76,7 @@ MonoBehaviour:
         m_Flags: 4
       - m_Name: up
         m_Id: ca58240a-b159-4b57-84b0-95754635bd50
-        m_Path: 
+        m_Path: <Keyboard>/i
         m_Interactions: 
         m_Processors: 
         m_Groups: 
@@ -83,7 +84,7 @@ MonoBehaviour:
         m_Flags: 8
       - m_Name: down
         m_Id: 99340578-7bee-4bba-a5d3-5d01f80d40e1
-        m_Path: 
+        m_Path: <Keyboard>/k
         m_Interactions: 
         m_Processors: 
         m_Groups: 
@@ -91,7 +92,7 @@ MonoBehaviour:
         m_Flags: 8
       - m_Name: left
         m_Id: 1f9d0b09-87c5-469b-ade1-57cdd7def4bf
-        m_Path: 
+        m_Path: <Keyboard>/j
         m_Interactions: 
         m_Processors: 
         m_Groups: 
@@ -99,12 +100,20 @@ MonoBehaviour:
         m_Flags: 8
       - m_Name: right
         m_Id: ffd491e2-25da-4839-a92e-694bce1a244e
-        m_Path: 
+        m_Path: <Keyboard>/l
         m_Interactions: 
         m_Processors: 
         m_Groups: 
         m_Action: Join
         m_Flags: 8
+      - m_Name: 
+        m_Id: 0a950b3a-68ad-4b12-ae8e-dd82e31e30e3
+        m_Path: 
+        m_Interactions: Press
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: -3900453174780888310, guid: f16aa913848f9d64b99fa1e0c2430eb9, type: 3}
   m_PlayerPrefab: {fileID: 7875661009557603437, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
@@ -129,3 +138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7776d88d9154249b7671032794fffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllGameNames: []
+  _gameData:
+    PlayerDatas: []
+    GameName: 
+--- !u!114 &2342071213823474233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642759186637705859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e00d448f55b634197516c2a61c7905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blasterShotPrefab: {fileID: 3797490958009447170, guid: e8e0d0833a200324099339f8495d60c0, type: 3}
