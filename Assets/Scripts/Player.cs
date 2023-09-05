@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] Collider2D _duckCollider;
     [SerializeField] Collider2D _standingCollider;
 
+    public Transform ItemPoint;
+
     public bool IsGrounded;
     public bool IsOnSnow;
 

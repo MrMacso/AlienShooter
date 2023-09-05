@@ -208,6 +208,37 @@ Transform:
   m_Father: {fileID: 7875661009557603439}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7697122642529873008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9038406181028018236}
+  m_Layer: 0
+  m_Name: Item Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9038406181028018236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697122642529873008}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.70710677}
+  m_LocalPosition: {x: 0.049999893, y: -0.12500012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7501416404247874406}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7875661009557603437
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +255,7 @@ GameObject:
   - component: {fileID: 7875661009557603445}
   - component: {fileID: 7875661009557603447}
   - component: {fileID: 1743975332}
+  - component: {fileID: 1550179547}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -346,6 +378,9 @@ MonoBehaviour:
   _coinSfx: {fileID: 8300000, guid: 1c9135367bc2f284fbce9378be454f91, type: 3}
   _hurtSfx: {fileID: 8300000, guid: 028d3c2cd5dbcf647b70676f5ab9654d, type: 3}
   _knockbackVelocity: 300
+  _duckCollider: {fileID: 1550179547}
+  _standingCollider: {fileID: 7875661009557603444}
+  ItemPoint: {fileID: 9038406181028018236}
   IsGrounded: 0
   IsOnSnow: 0
 --- !u!70 &7875661009557603444
@@ -502,8 +537,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d300f996f3598c408427dcb32d88259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blasterShotPrefab: {fileID: 3797490958009447170, guid: e8e0d0833a200324099339f8495d60c0, type: 3}
   _firePoint: {fileID: 1862999499}
+--- !u!70 &1550179547
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875661009557603437}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4}
+  m_Size: {x: 0.84, y: 1.2}
+  m_Direction: 0
 --- !u!1 &7875661009622247952
 GameObject:
   m_ObjectHideFlags: 0
