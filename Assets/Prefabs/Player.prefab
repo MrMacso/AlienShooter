@@ -167,13 +167,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862999498}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -0.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.5749999, y: 0.1700002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7501416404247874406}
-  m_RootOrder: 3
+  m_Father: {fileID: 8497670598849259587}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3097270965206328416
 GameObject:
@@ -237,7 +237,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7501416404247874406}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7875661009557603437
 GameObject:
@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 7875661009557603445}
   - component: {fileID: 7875661009557603447}
   - component: {fileID: 7875661009557603434}
-  - component: {fileID: 1743975332}
   - component: {fileID: 7449119023721150302}
   m_Layer: 6
   m_Name: Player
@@ -541,19 +540,6 @@ MonoBehaviour:
   _standingCollider: {fileID: 7875661009557603444}
   IsGrounded: 0
   IsOnSnow: 0
---- !u!114 &1743975332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875661009557603437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d300f996f3598c408427dcb32d88259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firePoint: {fileID: 1862999499}
 --- !u!114 &7449119023721150302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +719,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7875661009557603439}
     m_Modifications:
+    - target: {fileID: 1582240137606865927, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
+      propertyPath: m_Name
+      value: Blaster
+      objectReference: {fileID: 0}
     - target: {fileID: 4283367920542834431, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -793,3 +783,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 383251888667542849, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
   m_PrefabInstance: {fileID: 7875661010881564199}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8497670598849259587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1776174814450263652, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
+  m_PrefabInstance: {fileID: 7875661010881564199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8700612480349596192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1582240137606865927, guid: 691aa0bbcaf112744846774c2a8b4e6b, type: 3}
+  m_PrefabInstance: {fileID: 7875661010881564199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1658196167101577354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700612480349596192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d300f996f3598c408427dcb32d88259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePoint: {fileID: 1862999499}

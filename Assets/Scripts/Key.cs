@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class Key : MonoBehaviour,IItem
 {
     [SerializeField] float _useRange = 1f;
 
