@@ -324,6 +324,17 @@
                     "action": "EquipNext",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fdaef181-5ffd-42a3-b6d3-a6edeb55de92",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EquipNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
