@@ -250,12 +250,13 @@ GameObject:
   - component: {fileID: 7875661009557603439}
   - component: {fileID: 7875661009557603438}
   - component: {fileID: 7875661009557603433}
-  - component: {fileID: 7875661009557603434}
   - component: {fileID: 7875661009557603444}
+  - component: {fileID: 1550179547}
   - component: {fileID: 7875661009557603445}
   - component: {fileID: 7875661009557603447}
+  - component: {fileID: 7875661009557603434}
   - component: {fileID: 1743975332}
-  - component: {fileID: 1550179547}
+  - component: {fileID: 7449119023721150302}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -353,36 +354,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7875661009557603434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7875661009557603437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c58e0b2da928940aa721e0f5c5b98b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHorizonalSpeed: 5
-  _jumpVelocity: 5
-  _jumpDuration: 0.5
-  _jumpSprite: {fileID: 21300000, guid: 6b76aaac90375384da4f4fbfcbfaa7e3, type: 3}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 55
-  _footOffset: 0.25
-  _groundAcceleration: 10
-  _snowAcceleration: 1
-  _coinSfx: {fileID: 8300000, guid: 1c9135367bc2f284fbce9378be454f91, type: 3}
-  _hurtSfx: {fileID: 8300000, guid: 028d3c2cd5dbcf647b70676f5ab9654d, type: 3}
-  _knockbackVelocity: 300
-  _duckCollider: {fileID: 1550179547}
-  _standingCollider: {fileID: 7875661009557603444}
-  ItemPoint: {fileID: 9038406181028018236}
-  IsGrounded: 0
-  IsOnSnow: 0
 --- !u!70 &7875661009557603444
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -398,6 +369,22 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.84, y: 2}
+  m_Direction: 0
+--- !u!70 &1550179547
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875661009557603437}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4}
+  m_Size: {x: 0.84, y: 1.2}
   m_Direction: 0
 --- !u!82 &7875661009557603445
 AudioSource:
@@ -525,6 +512,35 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
+--- !u!114 &7875661009557603434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875661009557603437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c58e0b2da928940aa721e0f5c5b98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHorizonalSpeed: 5
+  _jumpVelocity: 5
+  _jumpDuration: 0.5
+  _jumpSprite: {fileID: 21300000, guid: 6b76aaac90375384da4f4fbfcbfaa7e3, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 55
+  _footOffset: 0.25
+  _groundAcceleration: 10
+  _snowAcceleration: 1
+  _coinSfx: {fileID: 8300000, guid: 1c9135367bc2f284fbce9378be454f91, type: 3}
+  _hurtSfx: {fileID: 8300000, guid: 028d3c2cd5dbcf647b70676f5ab9654d, type: 3}
+  _knockbackVelocity: 300
+  _duckCollider: {fileID: 1550179547}
+  _standingCollider: {fileID: 7875661009557603444}
+  IsGrounded: 0
+  IsOnSnow: 0
 --- !u!114 &1743975332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,22 +554,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 1862999499}
---- !u!70 &1550179547
-CapsuleCollider2D:
+--- !u!114 &7449119023721150302
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7875661009557603437}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.4}
-  m_Size: {x: 0.84, y: 1.2}
-  m_Direction: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5243321b90a72b9488d53dedbb59dec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemPoint: {fileID: 9038406181028018236}
 --- !u!1 &7875661009622247952
 GameObject:
   m_ObjectHideFlags: 0
