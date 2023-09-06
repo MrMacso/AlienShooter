@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 881804283890871357}
   m_Layer: 0
-  m_Name: Bullet_catbomb
+  m_Name: Catbomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
