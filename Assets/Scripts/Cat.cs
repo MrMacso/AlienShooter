@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -8,21 +5,25 @@ public class Cat : MonoBehaviour
     [SerializeField] CatBomb _catBombPrefab;
     [SerializeField] Transform _firePoint;
 
+    CatBomb _catBomb;
+
     void Start()
     {
+        SpawnCatBomb();
         var shootAnimationWrapper = GetComponentInChildren<ShootAnimationWrapper>();
-        shootAnimationWrapper.OnShoot += SpawnCatBomb;
+        shootAnimationWrapper.OnShoot += ShootCatBomb;
+        shootAnimationWrapper.OnReload += SpawnCatBomb;
+    }
+
+    void ShootCatBomb()
+    {
+        _catBomb.Launch(Vector2.up + Vector2.left);
+        _catBomb = null;
     }
 
     void SpawnCatBomb()
     {
-        var catBomb = Instantiate(_catBombPrefab, _firePoint);
-        catBomb.Launch(Vector2.up + Vector2.left);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(_catBomb == null )
+           _catBomb = Instantiate(_catBombPrefab, _firePoint);
     }
 }
