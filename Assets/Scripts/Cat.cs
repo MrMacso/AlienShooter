@@ -10,7 +10,8 @@ public class Cat : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(SpawnCatBomb), 3f, 3f);    
+        var shootAnimationWrapper = GetComponentInChildren<ShootAnimationWrapper>();
+        shootAnimationWrapper.OnShoot += SpawnCatBomb;
     }
 
     void SpawnCatBomb()

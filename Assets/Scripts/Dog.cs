@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class Dog : MonoBehaviour, ITakeDamage
 {
-    public void Shoot()
+    private void Start()
+    {
+        GetComponentInChildren<ShootAnimationWrapper>().OnShoot += Shoot;
+    }
+    void Shoot()
     {
         Debug.Log("Shooting");
     }

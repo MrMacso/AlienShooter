@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790720a21a661cb47a20e5c6c213ed88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _catBombPrefab: {fileID: 4391780747385159325, guid: c2d2dc5bcd182d94490c88b1896807fa, type: 3}
+  _catBombPrefab: {fileID: -3822606404357889842, guid: c2d2dc5bcd182d94490c88b1896807fa, type: 3}
   _firePoint: {fileID: 4358071267804673419}
 --- !u!1 &3075699859428243642
 GameObject:
@@ -1137,6 +1137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3980898394692363129}
   - component: {fileID: 862320295505390836}
+  - component: {fileID: 1582446708}
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -1181,6 +1182,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1582446708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993915808771137776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ea8f05fb3010546b09f3eb92a153b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4032276008899429343
 GameObject:
   m_ObjectHideFlags: 0
