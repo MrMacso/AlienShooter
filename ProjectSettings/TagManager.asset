@@ -57,3 +57,6 @@ TagManager:
   - name: Enemies
     uniqueID: 3139862207
     locked: 0
+  - name: Effects
+    uniqueID: 2331031349
+    locked: 0
