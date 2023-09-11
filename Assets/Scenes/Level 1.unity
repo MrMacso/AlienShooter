@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 274245384}
   - component: {fileID: 274245383}
   - component: {fileID: 274245382}
+  - component: {fileID: 274245385}
   m_Layer: 0
   m_Name: doorClosed_mid
   m_TagString: Untagged
@@ -475,6 +476,19 @@ Transform:
   m_Father: {fileID: 2048019207}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &274245385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274245381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ffba991310f5746b56e5b964e8e5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Level 2
 --- !u!1 &306107710
 GameObject:
   m_ObjectHideFlags: 3
@@ -1606,6 +1620,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5227098661076790050, guid: 031dc28b14fc4df4b95bd4e4b908cd8a, type: 3}
   m_PrefabInstance: {fileID: 2075688291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &978850000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8979677920573009452, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+  m_PrefabInstance: {fileID: 1581458454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995894544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,9 +2497,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow lock
       objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 978850000}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009453, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: OnUnlocked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8979677920573009454, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
       propertyPath: m_AutoTiling
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009454, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009454, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979677920573009454, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.92
       objectReference: {fileID: 0}
     - target: {fileID: 8979677920573009455, guid: c8b3be46f5ad0b14e8ecefdc2a954184, type: 3}
       propertyPath: m_Size.x
