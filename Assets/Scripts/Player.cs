@@ -75,6 +75,17 @@ public class Player : MonoBehaviour
     void Update()
     {
         UpdateGrounding();
+
+        if (GameManager.CinematicPlaying == false)
+        {
+            UpdateMovement();
+        }
+        UpdateAnimation();
+        UpdateDirection();
+    }
+
+    private void UpdateMovement()
+    {
         var input = _playerInput.actions["Move"].ReadValue<Vector2>();
         var horizontalInput = input.x;
         var verticalInput = input.y;
@@ -97,7 +108,7 @@ public class Player : MonoBehaviour
         var desiredHorizontal = horizontalInput * _maxHorizonalSpeed;
         var acceleration = IsOnSnow ? _snowAcceleration : _groundAcceleration;
 
-        _animator.SetBool("Duck", verticalInput < 0 && Math.Abs(verticalInput)> Math.Abs(horizontalInput));
+        _animator.SetBool("Duck", verticalInput < 0 && Math.Abs(verticalInput) > Math.Abs(horizontalInput));
 
         var isDucking = _animator.GetBool("IsDucking");
         if (isDucking)
@@ -118,9 +129,6 @@ public class Player : MonoBehaviour
                 _horizontal = desiredHorizontal;
         }
         _rb.velocity = new Vector2(_horizontal, vertical);
-
-        UpdateAnimation();
-        UpdateDirection();
     }
 
     void UpdateGrounding()
