@@ -49,7 +49,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -155,3 +155,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blasterShotPrefab: {fileID: 3797490958009447170, guid: e8e0d0833a200324099339f8495d60c0, type: 3}
+  _blasterImpactExplosionPrefab: {fileID: 4451638100774069679, guid: 1d82c2e25fed8fc458376d6c6e0ab0ac, type: 3}
