@@ -538,8 +538,11 @@ MonoBehaviour:
   _knockbackVelocity: 300
   _duckCollider: {fileID: 1550179547}
   _standingCollider: {fileID: 7875661009557603444}
+  _walldetectionDistance: 0.5
   IsGrounded: 0
   IsOnSnow: 0
+  IsDucking: 0
+  pointCount: 4
 --- !u!114 &7449119023721150302
 MonoBehaviour:
   m_ObjectHideFlags: 0

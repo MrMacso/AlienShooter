@@ -19,9 +19,12 @@ public class Player : MonoBehaviour
     [SerializeField] float _knockbackVelocity = 300;
     [SerializeField] Collider2D _duckCollider;
     [SerializeField] Collider2D _standingCollider;
+    [SerializeField] float _walldetectionDistance = 0.5f;
+    [SerializeField] int pointCount = 5;
 
     public bool IsGrounded;
     public bool IsOnSnow;
+    public bool IsDucking;
 
     Rigidbody2D _rb;
     SpriteRenderer _spriteRenderer;
@@ -33,8 +36,10 @@ public class Player : MonoBehaviour
     int _jumpRemaining;
     float _jumpEndTime;
 
+
     PlayerData _playerData = new PlayerData();
     RaycastHit2D[] _results = new RaycastHit2D [100];
+
 
     public event Action CoinsChanged;
     public event Action HealthChanged;
@@ -70,6 +75,23 @@ public class Player : MonoBehaviour
         //draw right foot
         origin = new Vector2(transform.position.x + _footOffset, transform.position.y - spriteRenderer.bounds.extents.y);
         Gizmos.DrawLine(origin, origin + Vector2.down * 0.1f);
+
+        DrawGizmosForSide(Vector2.left, pointCount);
+        DrawGizmosForSide(Vector2.right, pointCount);
+    }
+
+     void DrawGizmosForSide(Vector2 direction, int numberOfPoints)
+    {
+        var activeCollider = IsDucking ? _duckCollider : _standingCollider;
+        float colliderHeight = activeCollider.bounds.size.y;
+        float segmentSize = colliderHeight / (float)numberOfPoints;
+        for (int i = 0; i < numberOfPoints; i++)
+        {
+            var origin = transform.position - new Vector3(0, colliderHeight / 2f, 0);
+            origin += new Vector3(0, segmentSize * i, 0);
+            origin += (Vector3)direction * _walldetectionDistance;
+            Gizmos.DrawWireSphere(origin, 0.05f);
+        }
     }
 
     // Update is called once per frame
@@ -111,11 +133,11 @@ public class Player : MonoBehaviour
 
         _animator.SetBool("Duck", verticalInput < 0 && Math.Abs(verticalInput) > Math.Abs(horizontalInput));
 
-        var isDucking = _animator.GetBool("IsDucking");
-        if (isDucking)
+        IsDucking = _animator.GetBool("IsDucking");
+        if (IsDucking)
             desiredHorizontal = 0;
-        _duckCollider.enabled = isDucking;
-        _standingCollider.enabled = !isDucking;
+        _duckCollider.enabled = IsDucking;
+        _standingCollider.enabled = !IsDucking;
 
         if (desiredHorizontal > _horizontal)
         {
