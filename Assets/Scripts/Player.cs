@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     float _jumpEndTime;
 
     PlayerData _playerData = new PlayerData();
+    RaycastHit2D[] _results = new RaycastHit2D [100];
 
     public event Action CoinsChanged;
     public event Action HealthChanged;
@@ -153,14 +154,21 @@ public class Player : MonoBehaviour
 
     }
 
-    private void CheckGrounding(Vector2 origin)
+    void CheckGrounding(Vector2 origin)
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, Vector2.down, 0.1f, _layerMask);
+        int hits = Physics2D.Raycast(origin,
+                                     Vector2.down, 
+                                     new ContactFilter2D() { layerMask = _layerMask }, 
+                                     _results, 
+                                     0.1f);
 
-        foreach (var hit in hits)
+        for (int i = 0; i < hits; i++)
         {
+            var hit = _results[i];
+
             if (!hit.collider)
                 continue;
+
             if (hit.collider.isTrigger &&
                 hit.collider.GetComponent<Water>() == null)
                 continue;
