@@ -5291,6 +5291,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7875661009557603434, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
+      propertyPath: _buffer
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875661009557603434, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
+      propertyPath: pointCount
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 7875661009557603437, guid: 2e81e9faacbca4248ad8d0b1f0681740, type: 3}
       propertyPath: m_Name
       value: Player
