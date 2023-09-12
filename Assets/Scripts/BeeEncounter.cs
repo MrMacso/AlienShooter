@@ -51,6 +51,12 @@ public class BeeEncounter : MonoBehaviour
 
     IEnumerator SpawnNewLightning()
     {
+        if(_activeLightning.Count >= _lightnings.Count)
+        {
+            Debug.LogError("The number of requested lightnings exceeds the total available lightnings");
+            yield break;
+        }
+
         int index = UnityEngine.Random.Range(0, _lightnings.Count);
         var lightning = _lightnings[index];
 
