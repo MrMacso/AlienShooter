@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] float _knockbackVelocity = 300;
     [SerializeField] Collider2D _duckCollider;
     [SerializeField] Collider2D _standingCollider;
+    [SerializeField] float _groundDetectionOffset = 1.01f;
     [SerializeField] float _wallDetectionDistance = 0.5f;
     [SerializeField] int _wallCheckPoints = 5;
     [SerializeField] float _buffer = 0.1f;
@@ -70,13 +71,13 @@ public class Player : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Gizmos.color = Color.red;
 
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - spriteRenderer.bounds.extents.y);
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundDetectionOffset);
         Gizmos.DrawLine(origin, origin + Vector2.down * 0.1f);
         //draw left foot
-        origin = new Vector2(transform.position.x - _footOffset, transform.position.y - spriteRenderer.bounds.extents.y);
+        origin = new Vector2(transform.position.x - _footOffset, transform.position.y - _groundDetectionOffset);
         Gizmos.DrawLine(origin, origin + Vector2.down * 0.1f);
         //draw right foot
-        origin = new Vector2(transform.position.x + _footOffset, transform.position.y - spriteRenderer.bounds.extents.y);
+        origin = new Vector2(transform.position.x + _footOffset, transform.position.y - _groundDetectionOffset);
         Gizmos.DrawLine(origin, origin + Vector2.down * 0.1f);
 
         DrawGizmosForSide(Vector2.left);
@@ -109,8 +110,18 @@ public class Player : MonoBehaviour
             var origin = transform.position - new Vector3(0, activeCollider.bounds.size.y / 2f, 0);
             origin += new Vector3(0, _buffer + segmentSize * i, 0);
             origin += (Vector3)direction * _wallDetectionDistance;
-            if (Physics2D.Raycast(origin, direction, 0.1f))
-                return true;
+
+            int hits = Physics2D.Raycast(origin,
+                             direction,
+                             new ContactFilter2D() { layerMask = _layerMask },
+                             _results,
+                             0.1f);
+            for (int hitIndex = 0; hitIndex < hits; hitIndex++)
+            {
+                var hit = _results[hitIndex];
+                if (hit.collider && hit.collider.isTrigger == false)
+                    return true;
+            }
         }
         return false;
     }
@@ -178,6 +189,12 @@ public class Player : MonoBehaviour
             if (_horizontal < desiredHorizontal)
                 _horizontal = desiredHorizontal;
         }
+
+        if(desiredHorizontal > 0 && IsTouchingRightWall)
+            _horizontal= 0;
+        if(desiredHorizontal < 0 && IsTouchingLeftWall)
+            _horizontal= 0;
+
         _rb.velocity = new Vector2(_horizontal, vertical);
     }
 
@@ -187,15 +204,15 @@ public class Player : MonoBehaviour
         IsOnSnow = false;
 
         //check center
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _spriteRenderer.bounds.extents.y);
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundDetectionOffset);
         CheckGrounding(origin);
 
         //check left
-        origin = new Vector2(transform.position.x - _footOffset, transform.position.y - _spriteRenderer.bounds.extents.y);
+        origin = new Vector2(transform.position.x - _footOffset, transform.position.y - _groundDetectionOffset);
         CheckGrounding(origin);
 
         //check right
-        origin = new Vector2(transform.position.x + _footOffset, transform.position.y - _spriteRenderer.bounds.extents.y);
+        origin = new Vector2(transform.position.x + _footOffset, transform.position.y - _groundDetectionOffset);
         CheckGrounding(origin);
 
         if (IsGrounded && GetComponent<Rigidbody2D>().velocity.y <= 0)
@@ -207,7 +224,7 @@ public class Player : MonoBehaviour
     {
         int hits = Physics2D.Raycast(origin,
                                      Vector2.down, 
-                                     new ContactFilter2D() { layerMask = _layerMask }, 
+                                     new ContactFilter2D() { layerMask = _layerMask, useTriggers = true }, 
                                      _results, 
                                      0.1f);
 
