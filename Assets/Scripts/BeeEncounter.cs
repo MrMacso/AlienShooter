@@ -15,6 +15,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     [SerializeField] LayerMask _playerLayer;
     [SerializeField] int _numberOfLightnings = 1;
     [SerializeField] GameObject _bee;
+    [SerializeField] GameObject _beeLaser;
     [SerializeField] Animator _beeAnimator;
     [SerializeField] Transform[] _beeDestinations;
     [SerializeField] float _maxIdleTime = 1f;
@@ -23,23 +24,29 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     Collider2D[] _playerHitResult = new Collider2D[10];
     List<Transform> _activeLightning;
     public int _health = 5;
+    bool _shotStarted;
+    bool _shotFinished;
 
     void OnValidate()
     {
-        if(_lightningAnimationTime <= _delayBeforeDamage)
-            _delayBeforeDamage= _lightningAnimationTime;
+        if (_lightningAnimationTime <= _delayBeforeDamage)
+            _delayBeforeDamage = _lightningAnimationTime;
     }
     void OnEnable()
     {
         StartCoroutine(StartLightning());
         StartCoroutine(StartMovement());
+        var wrapper = GetComponentInChildren<ShootAnimationWrapper>();
+        wrapper.OnShoot += () => _shotStarted = true;
+        wrapper.OnReload += () => _shotFinished = true;
     }
 
     IEnumerator StartMovement()
     {
+        _beeLaser.SetActive(false);
         GrabBag<Transform> grabBag = new GrabBag<Transform>(_beeDestinations);
         while (true)
-        { 
+        {
             var destination = grabBag.Grab();
             if (destination == null)
             {
@@ -50,12 +57,21 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
             _beeAnimator.SetBool("Move", true);
             while (Vector2.Distance(_bee.transform.position, destination.position) > 0.1f)
             {
-                _bee.transform.position = Vector2.MoveTowards(_bee.transform.position, 
+                _bee.transform.position = Vector2.MoveTowards(_bee.transform.position,
                                             destination.position, Time.deltaTime);
                 yield return null;
             }
             _beeAnimator.SetBool("Move", false);
             yield return new WaitForSeconds(UnityEngine.Random.Range(_minIdleTime, _maxIdleTime));
+            _beeAnimator.SetTrigger("Fire");
+
+            yield return new WaitUntil(() => _shotStarted);
+            _shotStarted = false;
+            _beeLaser.SetActive(true);
+
+            yield return new WaitUntil(() => _shotFinished);
+            _shotFinished = false;
+            _beeLaser.SetActive(false);
         }
     }
 
@@ -66,7 +82,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
             lightning.gameObject.SetActive(false);
         }
 
-        _activeLightning= new List<Transform>();
+        _activeLightning = new List<Transform>();
 
         while (true)
         {
@@ -82,7 +98,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
 
     IEnumerator SpawnNewLightning()
     {
-        if(_activeLightning.Count >= _lightnings.Count)
+        if (_activeLightning.Count >= _lightnings.Count)
         {
             Debug.LogError("The number of requested lightnings exceeds the total available lightnings");
             yield break;
@@ -91,7 +107,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
         int index = UnityEngine.Random.Range(0, _lightnings.Count);
         var lightning = _lightnings[index];
 
-        while(_activeLightning.Contains(lightning))
+        while (_activeLightning.Contains(lightning))
         {
             index = UnityEngine.Random.Range(0, _lightnings.Count);
             lightning = _lightnings[index];
