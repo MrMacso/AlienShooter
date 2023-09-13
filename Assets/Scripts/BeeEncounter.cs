@@ -35,9 +35,10 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
 
     IEnumerator StartMovement()
     {
+        TransformGrabBag grabBag = new TransformGrabBag(_beeDestinations);
         while (true)
         { 
-            var destination = _beeDestinations[_destiantionIndex];
+            var destination = grabBag.Grab();
 
             while (Vector2.Distance(_bee.transform.position, destination.position) > 0.1f)
             {
