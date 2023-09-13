@@ -15,12 +15,14 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     [SerializeField] LayerMask _playerLayer;
     [SerializeField] int _numberOfLightnings = 1;
     [SerializeField] GameObject _bee;
+    [SerializeField] Animator _beeAnimator;
     [SerializeField] Transform[] _beeDestinations;
+    [SerializeField] float _maxIdleTime = 1f;
+    [SerializeField] float _minIdleTime = 2f;
 
     Collider2D[] _playerHitResult = new Collider2D[10];
     List<Transform> _activeLightning;
     public int _health = 5;
-    public int _destiantionIndex;
 
     void OnValidate()
     {
@@ -39,16 +41,21 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
         while (true)
         { 
             var destination = grabBag.Grab();
+            if (destination == null)
+            {
+                Debug.LogError("Unable to choose a random destination for the Bee. Stopping Movement");
+                yield break;
+            }
 
+            _beeAnimator.SetBool("Move", true);
             while (Vector2.Distance(_bee.transform.position, destination.position) > 0.1f)
             {
                 _bee.transform.position = Vector2.MoveTowards(_bee.transform.position, 
                                             destination.position, Time.deltaTime);
                 yield return null;
             }
-            _destiantionIndex++;
-            if(_destiantionIndex >= _beeDestinations.Length)
-                _destiantionIndex= 0;
+            _beeAnimator.SetBool("Move", false);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(_minIdleTime, _maxIdleTime));
         }
     }
 

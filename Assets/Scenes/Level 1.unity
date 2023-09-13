@@ -1054,11 +1054,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7267262770608245677, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
   m_PrefabInstance: {fileID: 522013007043844731}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &447284712 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 447284712, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
-  m_PrefabInstance: {fileID: 522013007043844731}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &464873389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1850,6 +1845,11 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4627573751007222193, guid: 4cfc4156f9e5ce842a67ebd4ad741bbf, type: 3}
   m_PrefabInstance: {fileID: 4627573751856086729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &879222341 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 921271641889976312, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
+  m_PrefabInstance: {fileID: 522013007043844731}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &940082314
 PrefabInstance:
@@ -3276,7 +3276,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 6803724471262239332, guid: 0af5a88fb87d89549bab7355874df5c8, type: 2}
-    value: {fileID: 447284712}
+    value: {fileID: 0}
   - key: {fileID: -5864985694714374477, guid: 0af5a88fb87d89549bab7355874df5c8, type: 2}
     value: {fileID: 1641420252}
   m_ExposedReferences:
@@ -4295,13 +4295,15 @@ MonoBehaviour:
     m_Bits: 64
   _numberOfLightnings: 1
   _bee: {fileID: 864323882}
+  _beeAnimator: {fileID: 879222341}
   _beeDestinations:
   - {fileID: 2047530277}
   - {fileID: 653844645}
   - {fileID: 1069036061}
   - {fileID: 825337303}
+  _maxIdleTime: 1
+  _minIdleTime: 2
   _health: 5
-  _destiantionIndex: 0
 --- !u!1 &2130015094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,6 +4453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2127430822}
     m_Modifications:
+    - target: {fileID: 921271641889976312, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2bbcc047861b3f441a05b19b670266ac, type: 2}
     - target: {fileID: 3370864276320467006, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
       propertyPath: m_Name
       value: Bee Root
@@ -4499,7 +4505,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 447284712, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d2c624ad6d739347985b2bf1217f1d3, type: 3}
 --- !u!1001 &826363727949531967
 PrefabInstance:
