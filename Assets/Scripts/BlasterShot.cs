@@ -44,6 +44,9 @@ public class BlasterShot : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         var damageable = collision.gameObject.GetComponent<ITakeDamage>();
+        if(damageable== null)
+            damageable = collision.gameObject.GetComponentInParent<ITakeDamage>();
+
         if (damageable != null)
             damageable.TakeDamage();
 
