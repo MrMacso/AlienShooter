@@ -17,6 +17,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     [SerializeField] GameObject _bee;
     [SerializeField] GameObject _beeLaser;
     [SerializeField] Animator _beeAnimator;
+    [SerializeField] Rigidbody2D _beeRigidbody;
     [SerializeField] Transform[] _beeDestinations;
     [SerializeField] float _maxIdleTime = 1f;
     [SerializeField] float _minIdleTime = 2f;
@@ -146,7 +147,11 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     {
         _health--;
         if (_health <= 0)
-            _bee.SetActive(false);
+        { 
+            StopAllCoroutines();
+            _beeAnimator.SetBool("Dead", true);
+            _beeRigidbody.bodyType = RigidbodyType2D.Dynamic;
+        }
         else
             _beeAnimator.SetTrigger("Hit");
     }
