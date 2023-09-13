@@ -151,6 +151,10 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
             StopAllCoroutines();
             _beeAnimator.SetBool("Dead", true);
             _beeRigidbody.bodyType = RigidbodyType2D.Dynamic;
+            foreach (var collider in GetComponentsInChildren<Collider2D>())
+            {
+                collider.gameObject.layer = LayerMask.NameToLayer("Dead");
+            }
         }
         else
             _beeAnimator.SetTrigger("Hit");
