@@ -4309,7 +4309,7 @@ MonoBehaviour:
   - {fileID: 825337303}
   _maxIdleTime: 1
   _minIdleTime: 2
-  _health: 5
+  _health: 20
 --- !u!1 &2130015094
 GameObject:
   m_ObjectHideFlags: 0

@@ -147,5 +147,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
         _health--;
         if (_health <= 0)
             _bee.SetActive(false);
+        else
+            _beeAnimator.SetTrigger("Hit");
     }
 }
