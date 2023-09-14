@@ -23,6 +23,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     [SerializeField] float _minIdleTime = 2f;
     [SerializeField] int _maxHealth = 50;
     [SerializeField] Water _water;
+    [SerializeField] Collider2D _floodGroundCollider;
 
     Collider2D[] _playerHitResult = new Collider2D[10];
     List<Transform> _activeLightning;
@@ -159,7 +160,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
             StartCoroutine(ToggleFlood(false));
             _beeAnimator.SetBool("Dead", true);
             _beeRigidbody.bodyType = RigidbodyType2D.Dynamic;
-            foreach (var collider in GetComponentsInChildren<Collider2D>())
+            foreach (var collider in _bee.GetComponentsInChildren<Collider2D>())
             {
                 collider.gameObject.layer = LayerMask.NameToLayer("Dead");
             }
@@ -170,9 +171,20 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
 
     IEnumerator ToggleFlood(bool enableFlood)
     {
-        var targetWaterY = enableFlood ? _water.transform.position.y + 1 : _water.transform.position.y - 1;
-        _water.transform.position = new Vector3(_water.transform.position.x, targetWaterY, _water.transform.position.z);
-        yield return null;
+        float initialWaterY = _water.transform.position.y;
+        var targetWaterY = enableFlood ? initialWaterY + 1 : _water.transform.position.y - 1;
+        float duration = 1f;
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float progress = elapsedTime / duration;
+            float y = Mathf.Lerp(initialWaterY, targetWaterY, progress);
+            var destination = new Vector3(_water.transform.position.x, y, _water.transform.position.z);
+            _water.transform.position = destination;
+            yield return null;
+        }
+        _floodGroundCollider.enabled = !enableFlood;
     }
 
 
