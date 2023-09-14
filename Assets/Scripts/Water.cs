@@ -15,4 +15,8 @@ public class Water : MonoBehaviour
     {
         _audioSource?.Play();
     }
+    public void SetSpeed(float speed)
+    { 
+        GetComponent<BuoyancyEffector2D>().flowMagnitude= speed;
+    }
 }

@@ -185,6 +185,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
             yield return null;
         }
         _floodGroundCollider.enabled = !enableFlood;
+        _water.SetSpeed(enableFlood ? 5f : 0f);
     }
 
 

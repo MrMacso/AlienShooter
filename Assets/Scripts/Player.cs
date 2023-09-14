@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float _jumpDuration = 0.5f;
     [SerializeField] Sprite _jumpSprite;
     [SerializeField] LayerMask _layerMask;
+    [SerializeField] LayerMask _waterLayerMask;
     [SerializeField] float _footOffset = 0.35f;
     [SerializeField] float _groundAcceleration = 25;
     [SerializeField] float _snowAcceleration = 1;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] float _buffer = 0.1f;
 
     public bool IsGrounded;
+    public bool IsInWater;
     public bool IsOnSnow;
     public bool IsDucking;
     public bool IsTouchingRightWall;
@@ -195,13 +197,17 @@ public class Player : MonoBehaviour
         if(desiredHorizontal < 0 && IsTouchingLeftWall)
             _horizontal= 0;
 
-        _rb.velocity = new Vector2(_horizontal, vertical);
+        if(IsInWater)
+            _rb.velocity = new Vector2(_rb.velocity.x, vertical);
+        else
+            _rb.velocity = new Vector2(_horizontal, vertical);
     }
 
     void UpdateGrounding()
     {
         IsGrounded = false;
         IsOnSnow = false;
+        IsInWater= false;
 
         //check center
         Vector2 origin = new Vector2(transform.position.x, transform.position.y - _groundDetectionOffset);
@@ -215,7 +221,7 @@ public class Player : MonoBehaviour
         origin = new Vector2(transform.position.x + _footOffset, transform.position.y - _groundDetectionOffset);
         CheckGrounding(origin);
 
-        if (IsGrounded && GetComponent<Rigidbody2D>().velocity.y <= 0)
+        if ((IsGrounded || IsInWater) && _rb.velocity.y <= 0)
             _jumpRemaining = 2;
 
     }
@@ -235,13 +241,12 @@ public class Player : MonoBehaviour
             if (!hit.collider)
                 continue;
 
-            if (hit.collider.isTrigger &&
-                hit.collider.GetComponent<Water>() == null)
-                continue;
-
             IsGrounded = true;
             IsOnSnow |= hit.collider.CompareTag("Snow");
         }
+        var water = Physics2D.OverlapPoint(origin, _waterLayerMask);
+        if (water != null)
+            IsInWater = true;
     }
 
     void UpdateAnimation()
