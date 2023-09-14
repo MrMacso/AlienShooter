@@ -172,7 +172,7 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
     IEnumerator ToggleFlood(bool enableFlood)
     {
         float initialWaterY = _water.transform.position.y;
-        var targetWaterY = enableFlood ? initialWaterY + 1 : _water.transform.position.y - 1;
+        float targetWaterY = enableFlood ? initialWaterY + 1 : initialWaterY - 1;
         float duration = 1f;
         float elapsedTime = 0;
         while (elapsedTime < duration)
@@ -184,8 +184,10 @@ public class BeeEncounter : MonoBehaviour, ITakeDamage
             _water.transform.position = destination;
             yield return null;
         }
+
         _floodGroundCollider.enabled = !enableFlood;
         _water.SetSpeed(enableFlood ? 5f : 0f);
+        
     }
 
 
