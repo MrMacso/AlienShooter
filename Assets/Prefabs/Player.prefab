@@ -530,6 +530,9 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 55
+  _waterLayerMask:
+    serializedVersion: 2
+    m_Bits: 16
   _footOffset: 0.25
   _groundAcceleration: 10
   _snowAcceleration: 1
@@ -538,11 +541,16 @@ MonoBehaviour:
   _knockbackVelocity: 300
   _duckCollider: {fileID: 1550179547}
   _standingCollider: {fileID: 7875661009557603444}
-  _walldetectionDistance: 0.5
+  _groundDetectionOffset: 1.01
+  _wallDetectionDistance: 0.5
+  _wallCheckPoints: 9
+  _buffer: 0.36
   IsGrounded: 0
+  IsInWater: 0
   IsOnSnow: 0
   IsDucking: 0
-  pointCount: 4
+  IsTouchingRightWall: 0
+  IsTouchingLeftWall: 0
 --- !u!114 &7449119023721150302
 MonoBehaviour:
   m_ObjectHideFlags: 0

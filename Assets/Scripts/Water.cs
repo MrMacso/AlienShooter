@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    AudioSource _audioSource;
-
-    void Awake()
+    private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        foreach (var waterFlowAnimation in GetComponentsInChildren<WaterFlowAnimation>())
+            waterFlowAnimation.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        _audioSource?.Play();
+        GetComponent<AudioSource>()?.Play();
+    }
+
+    public void SetSpeed(float speed)
+    { 
+        GetComponent<BuoyancyEffector2D>().flowMagnitude= speed;
+        foreach (var waterFlowAnimation in GetComponentsInChildren<WaterFlowAnimation>())
+            waterFlowAnimation.enabled = speed != 0;
     }
 }
