@@ -22,7 +22,11 @@ public class PlayerInventory : MonoBehaviour
         foreach (var item in GetComponentsInChildren<IItem>())
             Pickup(item);
     }
-
+    void OnDestroy()
+    {
+        _playerInput.actions["Fire"].performed -= UseEquipedItem;
+        _playerInput.actions["EquipNext"].performed -= EquipNext;
+    }
     void EquipNext(InputAction.CallbackContext obj)
     {
         _currentItemIndex++;

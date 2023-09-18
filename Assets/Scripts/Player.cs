@@ -130,6 +130,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.IsLoading)
+            return;
+
         UpdateGrounding();
         UpdateWallTouching();
 
@@ -139,6 +142,9 @@ public class Player : MonoBehaviour
         }
         UpdateAnimation();
         UpdateDirection();
+
+        _playerData.Position = _rb.position;
+        _playerData.Velocity = _rb.velocity;
     }
 
      void UpdateWallTouching()
@@ -276,6 +282,11 @@ public class Player : MonoBehaviour
     public void Bind(PlayerData playerData)
     {
         _playerData= playerData;
+    }
+    public void RestorePositionAndVelocity()
+    {
+        _rb.position = _playerData.Position;
+        _rb.velocity = _playerData.Velocity;
     }
     public void TakeDamage(Vector2 hitNormal)
     {
