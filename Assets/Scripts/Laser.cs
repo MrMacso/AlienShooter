@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,4 +61,5 @@ public class Laser : MonoBehaviour
 
         _lineRenderer.SetPosition(1, endPoint);
     }
+
 }

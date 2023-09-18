@@ -9,12 +9,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public static bool CinematicPlaying { get; private set; }
+    public static bool IsLoading { get; private set; }
 
     public List<string> AllGameNames = new List<string>();
 
     [SerializeField] GameData _gameData;
 
     PlayerInputManager _playerInputManager;
+    
+
     public void ToggleCinematic(bool cinematicPlaying) => CinematicPlaying = cinematicPlaying;
 
     void Awake()
@@ -43,14 +46,70 @@ public class GameManager : MonoBehaviour
             _playerInputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
         else
         {
+            _gameData.CurrentLevelName = arg0.name;
             _playerInputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
-            SaveGame();
+            var levelData= _gameData.LevelDatas.FirstOrDefault(t=> t.LevelName == arg0.name);
+            if(levelData == null)
+            {
+                levelData = new LevelData() { LevelName = arg0.name };
+                _gameData.LevelDatas.Add(levelData);
+            }
+            BindCoins(levelData);
+
+            BindLaserSwitches(levelData);
+
+            var allPlayers = FindObjectsOfType<Player>();
+            foreach (var player in allPlayers)
+            { 
+                var playerInput = player.GetComponent<PlayerInput>();
+                var data = GetPlayerData(playerInput.playerIndex);
+                player.Bind(data);
+                if (GameManager.IsLoading)
+                {
+                    player.RestorePositionAndVelocity();
+                    IsLoading= false;
+                }
+            }
+            //SaveGame();
         }
         
     }
 
-    void SaveGame()
+    private void BindLaserSwitches(LevelData levelData)
     {
+        var allLaserSwitches = FindObjectsOfType<LaserSwitch>();
+        foreach (var laserSwitch in allLaserSwitches)
+        {
+            var data = levelData.LaserSwitchDatas.FirstOrDefault(t => t.Name == laserSwitch.name);
+            if (data == null)
+            {
+                data = new LaserSwitchData() { IsOn = false, Name = laserSwitch.name };
+                levelData.LaserSwitchDatas.Add(data);
+            }
+            laserSwitch.Bind(data);
+        }
+    }
+
+    private void BindCoins(LevelData levelData)
+    {
+        var allCoins = FindObjectsOfType<Coin>();
+        foreach (var coin in allCoins)
+        {
+            var data = levelData.CoinDatas.FirstOrDefault(t => t.Name == coin.name);
+            if (data == null)
+            {
+                data = new CoinData() { IsCollected = false, Name = coin.name };
+                levelData.CoinDatas.Add(data);
+            }
+            coin.Bind(data);
+        }
+    }
+
+    public void SaveGame()
+    {
+        if(string.IsNullOrWhiteSpace(_gameData.GameName))
+            _gameData.GameName = "Game" + AllGameNames.Count;
+
         string text = JsonUtility.ToJson(_gameData);
         Debug.Log(text);
 
@@ -65,13 +124,17 @@ public class GameManager : MonoBehaviour
     }
     public void LoadGame(string gameName)
     {
+        IsLoading= true;
         string text = PlayerPrefs.GetString(gameName);
         _gameData = JsonUtility.FromJson<GameData>(text);
-        SceneManager.LoadScene("Level 1");
+        if(String.IsNullOrWhiteSpace( _gameData.CurrentLevelName))
+            _gameData.CurrentLevelName = "Level 1";
+        SceneManager.LoadScene(_gameData.CurrentLevelName);
     }
 
     void HandleJoinPlayer(PlayerInput playerInput)
     {
+        IsLoading = true;
         Debug.Log("Handle player joined" + playerInput);
         PlayerData playerData = GetPlayerData(playerInput.playerIndex);
         Player player = playerInput.GetComponent<Player>();
@@ -106,4 +169,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetString("AllGameNames", comaSeperatedGameNames);
         PlayerPrefs.Save();
     }
+
+    public void ReLoadGame() => LoadGame(_gameData.GameName);
+
 }
