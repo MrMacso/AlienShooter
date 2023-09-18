@@ -44,7 +44,14 @@ public class GameManager : MonoBehaviour
         else
         {
             _playerInputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
-            SaveGame();
+            var allPlayers = FindObjectsOfType<Player>();
+            foreach (var player in allPlayers)
+            { 
+                var playerInput = player.GetComponent<PlayerInput>();
+                var data = GetPlayerData(playerInput.playerIndex);
+                player.Bind(data);
+            }
+            //SaveGame();
         }
         
     }
