@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
             }
             BindCoins(levelData);
 
+            BindLaserSwitches(levelData);
+
             var allPlayers = FindObjectsOfType<Player>();
             foreach (var player in allPlayers)
             { 
@@ -71,6 +73,21 @@ public class GameManager : MonoBehaviour
             //SaveGame();
         }
         
+    }
+
+    private void BindLaserSwitches(LevelData levelData)
+    {
+        var allLaserSwitches = FindObjectsOfType<LaserSwitch>();
+        foreach (var laserSwitch in allLaserSwitches)
+        {
+            var data = levelData.LaserSwitchDatas.FirstOrDefault(t => t.Name == laserSwitch.name);
+            if (data == null)
+            {
+                data = new LaserSwitchData() { IsOn = false, Name = laserSwitch.name };
+                levelData.LaserSwitchDatas.Add(data);
+            }
+            laserSwitch.Bind(data);
+        }
     }
 
     private void BindCoins(LevelData levelData)

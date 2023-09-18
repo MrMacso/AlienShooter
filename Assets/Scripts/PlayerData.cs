@@ -27,6 +27,13 @@ public class LevelData
 {
     public string LevelName;
     public List<CoinData> CoinDatas = new List<CoinData>();
+    public List<LaserSwitchData> LaserSwitchDatas = new List<LaserSwitchData>();
+}
+[Serializable]
+public class LaserSwitchData
+{
+    public string Name;
+    public bool IsOn;
 }
 
 [Serializable]
