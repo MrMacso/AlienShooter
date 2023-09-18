@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameData _gameData;
 
     PlayerInputManager _playerInputManager;
+    
+
     public void ToggleCinematic(bool cinematicPlaying) => CinematicPlaying = cinematicPlaying;
 
     void Awake()
@@ -46,6 +48,14 @@ public class GameManager : MonoBehaviour
         {
             _gameData.CurrentLevelName = arg0.name;
             _playerInputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
+            var levelData= _gameData.LevelDatas.FirstOrDefault(t=> t.LevelName == arg0.name);
+            if(levelData == null)
+            {
+                levelData = new LevelData() { LevelName = arg0.name };
+                _gameData.LevelDatas.Add(levelData);
+            }
+            BindCoins(levelData);
+
             var allPlayers = FindObjectsOfType<Player>();
             foreach (var player in allPlayers)
             { 
@@ -61,6 +71,21 @@ public class GameManager : MonoBehaviour
             //SaveGame();
         }
         
+    }
+
+    private void BindCoins(LevelData levelData)
+    {
+        var allCoins = FindObjectsOfType<Coin>();
+        foreach (var coin in allCoins)
+        {
+            var data = levelData.CoinDatas.FirstOrDefault(t => t.Name == coin.name);
+            if (data == null)
+            {
+                data = new CoinData() { IsCollected = false, Name = coin.name };
+                levelData.CoinDatas.Add(data);
+            }
+            coin.Bind(data);
+        }
     }
 
     public void SaveGame()

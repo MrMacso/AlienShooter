@@ -19,4 +19,19 @@ public class GameData
     public string GameName;
 
     public string CurrentLevelName;
+    public List<LevelData> LevelDatas = new List<LevelData>();
+}
+
+[Serializable]
+public class LevelData
+{
+    public string LevelName;
+    public List<CoinData> CoinDatas = new List<CoinData>();
+}
+
+[Serializable]
+public class CoinData
+{
+    public string Name;
+    public bool IsCollected;
 }
