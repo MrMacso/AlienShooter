@@ -37,8 +37,8 @@ public class LaserSwitchData
 }
 
 [Serializable]
-public class CoinData
+public class CoinData : INamed
 {
-    public string Name;
     public bool IsCollected;
+    [field : SerializeField] public string Name { get; set; }
 }

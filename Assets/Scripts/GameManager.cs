@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
                 levelData = new LevelData() { LevelName = arg0.name };
                 _gameData.LevelDatas.Add(levelData);
             }
-            BindCoins(levelData);
+            Bind<Coin, CoinData>(levelData.CoinDatas);
+            //BindCoins(levelData);
 
             BindLaserSwitches(levelData);
 
@@ -74,7 +75,20 @@ public class GameManager : MonoBehaviour
         }
         
     }
-
+    void Bind<T, D>(List<D> datas) where T : MonoBehaviour, IBind<D> where D : INamed, new()
+    {
+        var instances = FindObjectsOfType<T>();
+        foreach (var instance in instances)
+        {
+            var data = datas.FirstOrDefault(t => t.Name == instance.name);
+            if (data == null)
+            { 
+                data = new D() {Name = instance.name };
+                datas.Add(data);
+            }
+            instance.Bind(data);
+        }
+    }
     private void BindLaserSwitches(LevelData levelData)
     {
         var allLaserSwitches = FindObjectsOfType<LaserSwitch>();
@@ -172,4 +186,9 @@ public class GameManager : MonoBehaviour
 
     public void ReLoadGame() => LoadGame(_gameData.GameName);
 
+}
+
+public interface INamed
+{
+    string Name { get; set; }
 }
