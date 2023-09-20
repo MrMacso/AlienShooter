@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour, IBind<PlayerData>
 {
 
     public Transform ItemPoint;
@@ -12,6 +12,7 @@ public class PlayerInventory : MonoBehaviour
     IItem EquipedItem => _items.Count >= _currentItemIndex ? _items[_currentItemIndex] : null;
     List<IItem> _items = new List<IItem>();
     int _currentItemIndex;
+    private PlayerData _data;
 
     void Awake()
     {
@@ -50,7 +51,7 @@ public class PlayerInventory : MonoBehaviour
             EquipedItem.Use();
     }
 
-    public void Pickup(IItem item)
+    public void Pickup(IItem item, bool persist = true)
     {
         item.transform.SetParent(ItemPoint);
         item.transform.localPosition = Vector3.zero;
@@ -61,5 +62,18 @@ public class PlayerInventory : MonoBehaviour
         var collider = item.gameObject.GetComponent<Collider2D>();
         if(collider != null)
             collider.enabled = false;
+        if (persist && _data.Items.Contains(item.name) == false)
+            _data.Items.Add(item.name);
+    }
+
+    public void Bind(PlayerData data)
+    {
+        _data = data;
+        foreach (var itemName in _data.Items)
+        {
+            var itemGameObject = GameObject.Find(itemName);
+            if (itemGameObject != null && itemGameObject.TryGetComponent<IItem>(out var item))
+                Pickup(item, false);
+        }
     }
 }

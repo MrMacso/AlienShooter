@@ -56,8 +56,7 @@ public class GameManager : MonoBehaviour
             }
             Bind<Coin, CoinData>(levelData.CoinDatas);
             Bind<LaserSwitch, LaserSwitchData>(levelData.LaserSwitchDatas);
-            //BindCoins(levelData);
-            //BindLaserSwitches(levelData);
+            Bind<PlayerInventory, PlayerData>(_gameData.PlayerDatas);
 
             var allPlayers = FindObjectsOfType<Player>();
             foreach (var player in allPlayers)
@@ -87,35 +86,6 @@ public class GameManager : MonoBehaviour
                 datas.Add(data);
             }
             instance.Bind(data);
-        }
-    }
-    private void BindLaserSwitches(LevelData levelData)
-    {
-        var allLaserSwitches = FindObjectsOfType<LaserSwitch>();
-        foreach (var laserSwitch in allLaserSwitches)
-        {
-            var data = levelData.LaserSwitchDatas.FirstOrDefault(t => t.Name == laserSwitch.name);
-            if (data == null)
-            {
-                data = new LaserSwitchData() { IsOn = false, Name = laserSwitch.name };
-                levelData.LaserSwitchDatas.Add(data);
-            }
-            laserSwitch.Bind(data);
-        }
-    }
-
-    private void BindCoins(LevelData levelData)
-    {
-        var allCoins = FindObjectsOfType<Coin>();
-        foreach (var coin in allCoins)
-        {
-            var data = levelData.CoinDatas.FirstOrDefault(t => t.Name == coin.name);
-            if (data == null)
-            {
-                data = new CoinData() { IsCollected = false, Name = coin.name };
-                levelData.CoinDatas.Add(data);
-            }
-            coin.Bind(data);
         }
     }
 
