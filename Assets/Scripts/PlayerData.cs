@@ -30,10 +30,10 @@ public class LevelData
     public List<LaserSwitchData> LaserSwitchDatas = new List<LaserSwitchData>();
 }
 [Serializable]
-public class LaserSwitchData
+public class LaserSwitchData : INamed
 {
-    public string Name;
     public bool IsOn;
+    [field: SerializeField] public string Name { get; set; }
 }
 
 [Serializable]
