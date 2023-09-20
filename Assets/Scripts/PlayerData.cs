@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class PlayerData
+public class PlayerData : INamed
 {
     public int Coins;
     public int Health = 6;
     public Vector2 Position;
     public Vector2 Velocity;
+    public List<string> Items = new List<string>();
+    [field: SerializeField] public string Name { get; set; }
+
 }
 
 [Serializable]
@@ -30,15 +33,15 @@ public class LevelData
     public List<LaserSwitchData> LaserSwitchDatas = new List<LaserSwitchData>();
 }
 [Serializable]
-public class LaserSwitchData
+public class LaserSwitchData : INamed
 {
-    public string Name;
     public bool IsOn;
+    [field: SerializeField] public string Name { get; set; }
 }
 
 [Serializable]
-public class CoinData
+public class CoinData : INamed
 {
-    public string Name;
     public bool IsCollected;
+    [field : SerializeField] public string Name { get; set; }
 }

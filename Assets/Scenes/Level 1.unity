@@ -2104,50 +2104,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1028413686}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1028413686}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleCinematic
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleCinematic
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6396447886378967694, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44776036efd158944ae6ce36888d735e, type: 3}
 --- !u!114 &1028413684 stripped
@@ -2159,17 +2115,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1028413686 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 773133524, guid: 44776036efd158944ae6ce36888d735e, type: 3}
-  m_PrefabInstance: {fileID: 1028413683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7776d88d9154249b7671032794fffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1057149867
@@ -4352,7 +4297,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5017204427132290690, guid: 14299002f480df0488d06b3557261222, type: 3}
       propertyPath: m_Name
-      value: Yellow key
+      value: Yellow key_1
       objectReference: {fileID: 0}
     - target: {fileID: 5017204427132290695, guid: 14299002f480df0488d06b3557261222, type: 3}
       propertyPath: m_RootOrder
@@ -4360,11 +4305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5017204427132290695, guid: 14299002f480df0488d06b3557261222, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56
+      value: 16.19
       objectReference: {fileID: 0}
     - target: {fileID: 5017204427132290695, guid: 14299002f480df0488d06b3557261222, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3782926
+      value: 2.95
       objectReference: {fileID: 0}
     - target: {fileID: 5017204427132290695, guid: 14299002f480df0488d06b3557261222, type: 3}
       propertyPath: m_LocalPosition.z

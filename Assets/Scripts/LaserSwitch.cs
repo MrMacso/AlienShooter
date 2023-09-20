@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LaserSwitch : MonoBehaviour
+public class LaserSwitch : MonoBehaviour, IBind<LaserSwitchData>
 {
     [SerializeField] Sprite _left;
     [SerializeField] Sprite _right;

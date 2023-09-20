@@ -54,9 +54,9 @@ public class GameManager : MonoBehaviour
                 levelData = new LevelData() { LevelName = arg0.name };
                 _gameData.LevelDatas.Add(levelData);
             }
-            BindCoins(levelData);
-
-            BindLaserSwitches(levelData);
+            Bind<Coin, CoinData>(levelData.CoinDatas);
+            Bind<LaserSwitch, LaserSwitchData>(levelData.LaserSwitchDatas);
+            Bind<PlayerInventory, PlayerData>(_gameData.PlayerDatas);
 
             var allPlayers = FindObjectsOfType<Player>();
             foreach (var player in allPlayers)
@@ -74,34 +74,18 @@ public class GameManager : MonoBehaviour
         }
         
     }
-
-    private void BindLaserSwitches(LevelData levelData)
+    void Bind<T, D>(List<D> datas) where T : MonoBehaviour, IBind<D> where D : INamed, new()
     {
-        var allLaserSwitches = FindObjectsOfType<LaserSwitch>();
-        foreach (var laserSwitch in allLaserSwitches)
+        var instances = FindObjectsOfType<T>();
+        foreach (var instance in instances)
         {
-            var data = levelData.LaserSwitchDatas.FirstOrDefault(t => t.Name == laserSwitch.name);
+            var data = datas.FirstOrDefault(t => t.Name == instance.name);
             if (data == null)
-            {
-                data = new LaserSwitchData() { IsOn = false, Name = laserSwitch.name };
-                levelData.LaserSwitchDatas.Add(data);
+            { 
+                data = new D() {Name = instance.name };
+                datas.Add(data);
             }
-            laserSwitch.Bind(data);
-        }
-    }
-
-    private void BindCoins(LevelData levelData)
-    {
-        var allCoins = FindObjectsOfType<Coin>();
-        foreach (var coin in allCoins)
-        {
-            var data = levelData.CoinDatas.FirstOrDefault(t => t.Name == coin.name);
-            if (data == null)
-            {
-                data = new CoinData() { IsCollected = false, Name = coin.name };
-                levelData.CoinDatas.Add(data);
-            }
-            coin.Bind(data);
+            instance.Bind(data);
         }
     }
 
@@ -172,4 +156,23 @@ public class GameManager : MonoBehaviour
 
     public void ReLoadGame() => LoadGame(_gameData.GameName);
 
+    internal Item GetItem(string itemName)
+    {
+        string prefabName = itemName.Substring(0, itemName.IndexOf("_"));
+        var prefab = _allItems.FirstOrDefault(t => t.name == prefabName);
+        if (prefab == null)
+        {
+            Debug.LogError($"Unable to find item {itemName}");
+            return null;
+        }
+        var newInstance = Instantiate(prefab);
+        newInstance.name = prefabName;
+        return newInstance;
+    }
+    public List<Item> _allItems;
+}
+
+public interface INamed
+{
+    string Name { get; set; }
 }
