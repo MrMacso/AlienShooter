@@ -9,8 +9,8 @@ public class PlayerInventory : MonoBehaviour, IBind<PlayerData>
 
     public Transform ItemPoint;
     PlayerInput _playerInput;
-    IItem EquipedItem => _items.Count >= _currentItemIndex ? _items[_currentItemIndex] : null;
-    List<IItem> _items = new List<IItem>();
+    Item EquipedItem => _items.Count >= _currentItemIndex ? _items[_currentItemIndex] : null;
+    List<Item> _items = new List<Item>();
     int _currentItemIndex;
     private PlayerData _data;
 
@@ -20,14 +20,16 @@ public class PlayerInventory : MonoBehaviour, IBind<PlayerData>
         _playerInput.actions["Fire"].performed += UseEquipedItem;
         _playerInput.actions["EquipNext"].performed += EquipNext;
 
-        foreach (var item in GetComponentsInChildren<IItem>())
+        foreach (var item in GetComponentsInChildren<Item>())
             Pickup(item);
     }
+
     void OnDestroy()
     {
         _playerInput.actions["Fire"].performed -= UseEquipedItem;
         _playerInput.actions["EquipNext"].performed -= EquipNext;
     }
+
     void EquipNext(InputAction.CallbackContext obj)
     {
         _currentItemIndex++;
@@ -51,7 +53,7 @@ public class PlayerInventory : MonoBehaviour, IBind<PlayerData>
             EquipedItem.Use();
     }
 
-    public void Pickup(IItem item, bool persist = true)
+    public void Pickup(Item item, bool isNew = false)
     {
         item.transform.SetParent(ItemPoint);
         item.transform.localPosition = Vector3.zero;
@@ -62,7 +64,7 @@ public class PlayerInventory : MonoBehaviour, IBind<PlayerData>
         var collider = item.gameObject.GetComponent<Collider2D>();
         if(collider != null)
             collider.enabled = false;
-        if (persist && _data.Items.Contains(item.name) == false)
+        if (isNew && _data.Items.Contains(item.name) == false)
             _data.Items.Add(item.name);
     }
 
@@ -72,8 +74,14 @@ public class PlayerInventory : MonoBehaviour, IBind<PlayerData>
         foreach (var itemName in _data.Items)
         {
             var itemGameObject = GameObject.Find(itemName);
-            if (itemGameObject != null && itemGameObject.TryGetComponent<IItem>(out var item))
+            if (itemGameObject != null && itemGameObject.TryGetComponent<Item>(out var item))
                 Pickup(item, false);
+            else
+            {
+                item = GameManager.Instance.GetItem(itemName);
+                if(item != null)
+                    Pickup(item);
+            }
         }
     }
 }

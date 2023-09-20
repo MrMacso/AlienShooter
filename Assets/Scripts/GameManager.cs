@@ -156,6 +156,20 @@ public class GameManager : MonoBehaviour
 
     public void ReLoadGame() => LoadGame(_gameData.GameName);
 
+    internal Item GetItem(string itemName)
+    {
+        string prefabName = itemName.Substring(0, itemName.IndexOf("_"));
+        var prefab = _allItems.FirstOrDefault(t => t.name == prefabName);
+        if (prefab == null)
+        {
+            Debug.LogError($"Unable to find item {itemName}");
+            return null;
+        }
+        var newInstance = Instantiate(prefab);
+        newInstance.name = prefabName;
+        return newInstance;
+    }
+    public List<Item> _allItems;
 }
 
 public interface INamed
